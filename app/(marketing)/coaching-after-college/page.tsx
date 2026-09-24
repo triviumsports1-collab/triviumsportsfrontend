@@ -1,12 +1,16 @@
 import {
   Card,
   CtaBand,
+  Disclaimer,
+  FaqBlock,
   PageHero,
   PrimaryLink,
   SecondaryLink,
   Section,
+  PillarGrid,
 } from "@/components/marketing/page-shell";
 import { PageSeo } from "@/components/seo/page-seo";
+import { afterCollegeLanding, visaDisclaimer } from "@/lib/content/landings";
 import { optFaqs } from "@/lib/content/marketing";
 import { faqJsonLd } from "@/lib/schema";
 import { pageMetadata, pages } from "@/lib/seo";
@@ -24,9 +28,9 @@ export default function AfterCollegePage() {
       />
       <PageHero
         crumbs={[{ name: "Coaching after college", href: routes.afterCollege }]}
-        kicker="Coaching after college"
-        title="OPT and STEM OPT, explained for tennis players."
-        lede="Eligibility ends. The dual-match language you spent four years learning does not. Trivium helps former college players understand how Optional Practical Training can support a coaching chapter at U.S. clubs — and then makes the introduction."
+        kicker={afterCollegeLanding.kicker}
+        title={afterCollegeLanding.title}
+        lede={afterCollegeLanding.lede}
         actions={
           <>
             <PrimaryLink href={`${routes.getStarted}?path=coach`}>Start coach intake</PrimaryLink>
@@ -35,8 +39,17 @@ export default function AfterCollegePage() {
         }
       />
 
+      <Section>
+        <PillarGrid
+          heading={afterCollegeLanding.pillarHeading}
+          lede={afterCollegeLanding.pillarLede}
+          items={afterCollegeLanding.pillars}
+        />
+      </Section>
+
       <Section tone="elevated">
-        <h2 className="text-3xl font-semibold tracking-tight">What OPT is (in tennis terms)</h2>
+        <p className="text-sm font-semibold uppercase tracking-[0.18em] text-brand-deep">Education</p>
+        <h2 className="mt-3 text-3xl font-semibold tracking-tight">What OPT is (in tennis terms)</h2>
         <p className="mt-4 max-w-3xl text-base leading-7 text-ink-muted">
           Optional Practical Training (OPT) is a form of work authorization available to many
           F-1 students after (or in some cases during) a qualifying U.S. degree. STEM OPT is an
@@ -60,31 +73,16 @@ export default function AfterCollegePage() {
             </p>
           </Card>
         </ul>
-        <p className="mt-8 max-w-3xl text-sm leading-6 text-ink-muted">
-          This page is educational, not legal advice. Your Designated School Official and, where
-          appropriate, licensed immigration counsel are the authorities on your case. Trivium does
-          not file petitions and does not tell you which category you “should” use.
-        </p>
+        <div className="mt-8">
+          <Disclaimer>{visaDisclaimer}</Disclaimer>
+        </div>
       </Section>
 
       <Section>
         <h2 className="text-3xl font-semibold tracking-tight">How Trivium helps the transition</h2>
         <ol className="mt-8 max-w-3xl space-y-6">
-          {[
-            {
-              t: "Translate the college game",
-              d: "Directors do not need another highlight reel of match wins. They need to know you can run a clinic, hold a standard, and show up for the 7 a.m. court.",
-            },
-            {
-              t: "Time the calendar",
-              d: "College seasons and club calendars do not automatically match. We talk about when you can actually be on court.",
-            },
-            {
-              t: "Introduce you to tennis homes",
-              d: "U.S. clubs and academies that want dedicated coaches — not a one-week trial advertised as a career.",
-            },
-          ].map((item, index) => (
-            <li key={item.t} className="border-b border-line pb-6">
+          {afterCollegeLanding.help.map((item, index) => (
+            <li key={item.t} className="border-b border-line pb-6 last:border-0">
               <p className="text-sm font-semibold tabular-nums text-brand">0{index + 1}</p>
               <h3 className="mt-1 text-xl font-semibold">{item.t}</h3>
               <p className="mt-2 text-base leading-7 text-ink-muted">{item.d}</p>
@@ -95,14 +93,12 @@ export default function AfterCollegePage() {
 
       <Section tone="elevated">
         <h2 className="text-3xl font-semibold tracking-tight">OPT questions, answered plainly</h2>
-        <dl className="mt-8 max-w-3xl space-y-8">
-          {optFaqs.map((item) => (
-            <div key={item.q}>
-              <dt className="text-lg font-semibold text-ink">{item.q}</dt>
-              <dd className="mt-2 text-base leading-7 text-ink-muted">{item.a}</dd>
-            </div>
-          ))}
-        </dl>
+        <p className="mt-4 max-w-2xl text-base leading-7 text-ink-muted">
+          Educational answers only. Your DSO and licensed counsel remain the authorities on your case.
+        </p>
+        <div className="mt-8">
+          <FaqBlock items={optFaqs} />
+        </div>
       </Section>
 
       <CtaBand

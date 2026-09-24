@@ -112,6 +112,32 @@ export function howToJsonLd() {
   }));
 }
 
+export function howToFromSteps(
+  name: string,
+  description: string,
+  steps: readonly { t: string; d: string }[],
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name,
+    description,
+    step: steps.map((step, index) => ({
+      "@type": "HowToStep",
+      position: index + 1,
+      name: step.t,
+      text: step.d,
+    })),
+  };
+}
+
+export function sportsOrgAboutJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    ...organizationNode(),
+  };
+}
+
 export function jobRolesItemListJsonLd() {
   return {
     "@context": "https://schema.org",

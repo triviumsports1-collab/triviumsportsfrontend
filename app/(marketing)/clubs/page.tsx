@@ -2,26 +2,38 @@ import { IntakeSection } from "@/components/forms/intake-section";
 import {
   Card,
   CtaBand,
+  Disclaimer,
+  FaqBlock,
   PageHero,
   PrimaryLink,
   SecondaryLink,
   Section,
+  PillarGrid,
 } from "@/components/marketing/page-shell";
 import { PageSeo } from "@/components/seo/page-seo";
+import { clubLanding } from "@/lib/content/landings";
+import { faqGroups } from "@/lib/content/marketing";
+import { sportsOrgAboutJsonLd } from "@/lib/schema";
 import { pageMetadata } from "@/lib/seo";
 import { routes } from "@/lib/site";
 
 export const metadata = pageMetadata("clubs");
 
 export default function ClubsPage() {
+  const clubFaqs = faqGroups[2].items;
+
   return (
     <main>
-      <PageSeo page="clubs" crumbName="Clubs & academies" />
+      <PageSeo
+        page="clubs"
+        crumbName="Clubs & academies"
+        extras={[sportsOrgAboutJsonLd()]}
+      />
       <PageHero
         crumbs={[{ name: "Clubs & academies", href: routes.clubs }]}
-        kicker="Clubs & academies"
-        title="Trivium coaches work at clubs. You keep the tennis standard."
-        lede="We source international and post-collegiate tennis coaches for U.S. clubs and academies, then coordinate work authorization so directors can put professionals on court with a clear, compliant structure."
+        kicker={clubLanding.kicker}
+        title={clubLanding.title}
+        lede={clubLanding.lede}
         actions={
           <>
             <PrimaryLink href="#club-intake">Club intake</PrimaryLink>
@@ -30,27 +42,25 @@ export default function ClubsPage() {
         }
       />
 
+      <Section>
+        <PillarGrid
+          heading={clubLanding.pillarHeading}
+          lede={clubLanding.pillarLede}
+          items={clubLanding.pillars}
+        />
+      </Section>
+
       <Section tone="elevated">
-        <h2 className="text-3xl font-semibold tracking-tight">What directors ask us for</h2>
+        <p className="text-sm font-semibold uppercase tracking-[0.18em] text-brand-deep">
+          Leadership
+        </p>
+        <h2 className="mt-3 text-3xl font-semibold tracking-tight">What program leaders ask us for</h2>
         <ul className="mt-10 grid gap-6 md:grid-cols-3">
-          <Card title="Source tennis coaches">
-            <p>
-              Club professionals and high-performance coaches who can run clinics and private
-              lessons — not generalist “sports staff.”
-            </p>
-          </Card>
-          <Card title="Coordinate work authorization">
-            <p>
-              Timing, documentation, and a professional process so your club is not improvising
-              immigration questions in a group chat.
-            </p>
-          </Card>
-          <Card title="Stay tennis-first">
-            <p>
-              You set the on-court direction. Trivium coaches work at your club, inside your
-              culture and your calendar.
-            </p>
-          </Card>
+          {clubLanding.needs.map((item) => (
+            <Card key={item.title} title={item.title}>
+              <p>{item.body}</p>
+            </Card>
+          ))}
         </ul>
       </Section>
 
@@ -61,10 +71,47 @@ export default function ClubsPage() {
           direct the tennis. We make sure the professional arrangement behind that presence is
           orderly — including work authorization coordination with the appropriate advisors.
         </p>
+        <div className="mt-10 grid gap-6 md:grid-cols-2">
+          <article className="rounded-3xl border border-line bg-canvas-elevated p-6">
+            <h3 className="text-xl font-semibold tracking-tight">You keep</h3>
+            <ul className="mt-4 space-y-3 text-sm leading-6 text-ink-muted">
+              {clubLanding.split.keep.map((item) => (
+                <li key={item} className="flex gap-3">
+                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand" aria-hidden="true" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </article>
+          <article className="rounded-3xl border border-line bg-canvas-elevated p-6">
+            <h3 className="text-xl font-semibold tracking-tight">We handle</h3>
+            <ul className="mt-4 space-y-3 text-sm leading-6 text-ink-muted">
+              {clubLanding.split.we.map((item) => (
+                <li key={item} className="flex gap-3">
+                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand" aria-hidden="true" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </article>
+        </div>
       </Section>
 
       <Section tone="elevated">
-        <IntakeSection lockedPath="club" id="club-intake" />
+        <h2 className="text-3xl font-semibold tracking-tight">Club questions</h2>
+        <div className="mt-8">
+          <FaqBlock items={clubFaqs} />
+        </div>
+        <div className="mt-8">
+          <Disclaimer>
+            Trivium Sports is a tennis-exclusive desk. We source coaches and coordinate work
+            authorization as a professional process. We are not a law firm.
+          </Disclaimer>
+        </div>
+      </Section>
+
+      <Section id="club-intake">
+        <IntakeSection lockedPath="club" />
       </Section>
 
       <CtaBand

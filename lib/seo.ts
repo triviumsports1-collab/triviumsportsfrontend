@@ -108,7 +108,7 @@ export const pages: Record<MarketingRoute, SeoPage> = {
   },
   about: {
     path: routes.about,
-    title: "About Trivium Sports | Tennis Background & Compliance",
+    title: "About | Tennis Background & Compliance",
     description:
       "Trivium Sports was founded by tennis people — collegiate competition and club coaching — with a strict standard for compliance and work authorization coordination.",
     keywords: [
@@ -176,11 +176,13 @@ export function pageMetadata(key: keyof typeof pages): Metadata {
       title: page.title,
       description: page.description,
       locale: "en_US",
+      images: [{ url: "/opengraph-image", alt: page.title }],
     },
     twitter: {
       card: "summary_large_image",
       title: page.title,
       description: page.description,
+      images: ["/opengraph-image"],
     },
   };
 }

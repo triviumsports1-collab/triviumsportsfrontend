@@ -3,9 +3,13 @@ import {
   CtaBand,
   PageHero,
   PrimaryLink,
+  SecondaryLink,
   Section,
+  PillarGrid,
 } from "@/components/marketing/page-shell";
 import { PageSeo } from "@/components/seo/page-seo";
+import { aboutLanding } from "@/lib/content/landings";
+import { sportsOrgAboutJsonLd } from "@/lib/schema";
 import { pageMetadata } from "@/lib/seo";
 import { routes } from "@/lib/site";
 
@@ -14,17 +18,36 @@ export const metadata = pageMetadata("about");
 export default function AboutPage() {
   return (
     <main>
-      <PageSeo page="about" crumbName="About" type="AboutPage" />
+      <PageSeo
+        page="about"
+        crumbName="About"
+        type="AboutPage"
+        extras={[sportsOrgAboutJsonLd()]}
+      />
       <PageHero
         crumbs={[{ name: "About", href: routes.about }]}
-        kicker="About"
-        title="Founded on court. Measured by compliance."
-        lede="Trivium Sports is a tennis-exclusive agency. The founding team comes from collegiate competition, club coaching, and the unglamorous work of placing people inside U.S. tennis buildings the right way."
-        actions={<PrimaryLink href={routes.contact}>Contact</PrimaryLink>}
+        kicker={aboutLanding.kicker}
+        title={aboutLanding.title}
+        lede={aboutLanding.lede}
+        actions={
+          <>
+            <PrimaryLink href={routes.contact}>Contact</PrimaryLink>
+            <SecondaryLink href={routes.howItWorks}>How it works</SecondaryLink>
+          </>
+        }
       />
 
+      <Section>
+        <PillarGrid
+          heading={aboutLanding.pillarHeading}
+          lede={aboutLanding.pillarLede}
+          items={aboutLanding.highlightPillars}
+        />
+      </Section>
+
       <Section tone="elevated">
-        <h2 className="text-3xl font-semibold tracking-tight">Tennis background</h2>
+        <p className="text-sm font-semibold uppercase tracking-[0.18em] text-brand-deep">Background</p>
+        <h2 className="mt-3 text-3xl font-semibold tracking-tight">Tennis, not a generic agency</h2>
         <p className="mt-4 max-w-3xl text-base leading-7 text-ink-muted">
           We have lived dual matches, early-morning clinics, and the quiet gap after eligibility
           ends. International coaches already in the United States should not have to explain a
@@ -32,47 +55,24 @@ export default function AboutPage() {
           a forum. Trivium exists so those two conversations meet with a professional standard.
         </p>
         <ul className="mt-10 grid gap-6 md:grid-cols-3">
-          <Card title="Collegiate tennis">
-            <p>
-              The founding team competed in and around the U.S. college system — duals, travel,
-              and the particular discipline of a season.
-            </p>
-          </Card>
-          <Card title="Club coaching">
-            <p>
-              We have taught on public parks and high-performance courts. We know the difference
-              between a résumé and a Saturday morning that works.
-            </p>
-          </Card>
-          <Card title="International pathways">
-            <p>
-              OPT, STEM OPT, and related authorizations are part of how many tennis people stay
-              on U.S. courts. We treat that reality with care, not slogans.
-            </p>
-          </Card>
+          {aboutLanding.pillars.map((item) => (
+            <Card key={item.title} title={item.title}>
+              <p>{item.body}</p>
+            </Card>
+          ))}
         </ul>
       </Section>
 
       <Section>
         <h2 className="text-3xl font-semibold tracking-tight">Compliance standards</h2>
-        <ul className="mt-6 max-w-3xl list-disc space-y-3 pl-5 text-base leading-7 text-ink-muted">
-          <li>
-            We do not provide legal advice. Immigration outcomes belong with DSOs and licensed
-            counsel.
-          </li>
-          <li>
-            Sensitive immigration and form data are collected only as needed, stored with access
-            control, and never used as marketing content.
-          </li>
-          <li>
-            Work authorization is coordinated as a professional process with clubs — not as an
-            informal side conversation.
-          </li>
-          <li>
-            Trivium coaches work at clubs under a clear arrangement. We do not improvise status
-            on the back of a lesson pad.
-          </li>
-        </ul>
+        <ol className="mt-8 max-w-3xl space-y-5">
+          {aboutLanding.standards.map((item, index) => (
+            <li key={item} className="flex gap-4">
+              <span className="text-lg font-semibold tabular-nums text-brand">0{index + 1}</span>
+              <p className="text-base leading-7 text-ink-muted">{item}</p>
+            </li>
+          ))}
+        </ol>
         <p className="mt-8 text-sm text-ink-muted">
           Read how we handle information in our{" "}
           <a className="font-medium text-brand-deep underline" href={routes.privacy}>
@@ -82,7 +82,10 @@ export default function AboutPage() {
         </p>
       </Section>
 
-      <CtaBand title="Work with a tennis-exclusive desk." lede="Tell us who you are. We will answer as people who have been on court." />
+      <CtaBand
+        title="Work with a tennis-exclusive desk."
+        lede="Tell us who you are. We will answer as people who have been on court."
+      />
     </main>
   );
 }
