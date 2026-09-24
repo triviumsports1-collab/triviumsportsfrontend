@@ -25,9 +25,9 @@ export const pages: Record<MarketingRoute, SeoPage> = {
   },
   coaches: {
     path: routes.coaches,
-    title: "International Tennis Coaches in the U.S. (OPT & STEM OPT)",
+    title: "coaching jobs in USA for coaches | coach hiring with visa support",
     description:
-      "For international tennis coaches already in the United States on OPT or STEM OPT. Trivium introduces club-ready coaches to U.S. tennis clubs and academies.",
+      "You have real in-sport experience. We help international coaches and former student-athletes secure coaching placements with vetted U.S. clubs, academies, and schools across youth and high-performance environments.",
     keywords: [
       "international tennis coaches USA",
       "OPT tennis coach",
@@ -37,9 +37,9 @@ export const pages: Record<MarketingRoute, SeoPage> = {
   },
   afterCollege: {
     path: routes.afterCollege,
-    title: "Coaching After College: OPT & STEM OPT for Tennis Players",
+    title: "From Student-Athlete to Coach: Your Next Chapter Starts Here",
     description:
-      "How OPT and STEM OPT can support a tennis coaching chapter after U.S. college eligibility — and how Trivium Sports helps former players reach U.S. clubs. Educational, not legal advice.",
+      "Turn high performance habits into coaching impact in the U.S. Get step by step OPT support, interview prep, curated introductions, and mentorship through your first season.",
     keywords: [
       "coaching after college tennis",
       "OPT tennis coaching",
@@ -50,9 +50,9 @@ export const pages: Record<MarketingRoute, SeoPage> = {
   },
   jobs: {
     path: routes.jobs,
-    title: "Tennis Coaching Jobs USA | Club Pro & High-Performance",
+    title: "Coaching Jobs USA | Sports Recruitment Agency",
     description:
-      "Types of U.S. tennis coaching roles: club professional, high-performance, and junior development. Not a live job board — tell Trivium Sports about you.",
+      "We connect graduating athletes and qualified talent with vetted U.S. clubs and academies. Expect clear steps, visa support, and lasting mentorship.",
     keywords: [
       "tennis coaching jobs USA",
       "club tennis pro jobs",
@@ -73,9 +73,9 @@ export const pages: Record<MarketingRoute, SeoPage> = {
   },
   players: {
     path: routes.players,
-    title: "International Tennis Players | U.S. Training & Academies",
+    title: "College Sports Recruitment USA | Athlete Placement",
     description:
-      "Trivium Sports helps international tennis players with U.S. training blocks, academy placement, and competition planning — a professional plan, not a tourist week.",
+      "Years of elite training translate directly to value in the role. Your habits, judgment, and leadership are what strong programs seek.",
     keywords: [
       "international tennis academy USA",
       "tennis training United States",
@@ -85,9 +85,9 @@ export const pages: Record<MarketingRoute, SeoPage> = {
   },
   clubs: {
     path: routes.clubs,
-    title: "Tennis Coaches for U.S. Clubs & Academies",
+    title: "Hire Sports Coaches USA | Recruitment Agency",
     description:
-      "Trivium coaches work at clubs. We source tennis coaches for U.S. clubs and academies and coordinate work authorization so directors keep the on-court standard.",
+      "Each year, standout international graduates are ready to coach in the U.S. We deliver curated shortlists and handle compliance so your program can move fast.",
     keywords: [
       "tennis coaches for clubs",
       "tennis academy staffing",
@@ -108,9 +108,9 @@ export const pages: Record<MarketingRoute, SeoPage> = {
   },
   about: {
     path: routes.about,
-    title: "About | Tennis Background & Compliance",
+    title: "Sports Recruitment Agency USA | About Trivium",
     description:
-      "Trivium Sports was founded by tennis people — collegiate competition and club coaching — with a strict standard for compliance and work authorization coordination.",
+      "Trivium Sports is a coach-centered initiative that connects international student-athletes and early-career coaches with trusted U.S. sports organizations.",
     keywords: [
       "Trivium Sports",
       "tennis agency USA",

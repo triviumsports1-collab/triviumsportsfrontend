@@ -1,9 +1,9 @@
 export const site = {
   name: "Trivium Sports",
   url: "https://triviumsports.com",
-  email: "hello@triviumsports.com",
+  email: "info@triviumsports.com",
   whatsappE164: process.env.NEXT_PUBLIC_WHATSAPP_E164 ?? "13055550148",
-  whatsappDisplay: process.env.NEXT_PUBLIC_WHATSAPP_DISPLAY ?? "+1 (305) 555-0148",
+  whatsappDisplay: process.env.NEXT_PUBLIC_WHATSAPP_DISPLAY ?? "+1 602-341-3361",
   instagram: "https://www.instagram.com/triviumsports",
   linkedin: "https://www.linkedin.com/company/triviumsports",
 } as const;
