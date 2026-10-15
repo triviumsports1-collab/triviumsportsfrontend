@@ -22,16 +22,16 @@ export default function AboutPage() {
         crumbs={[{ name: "About", href: routes.about }]}
         kicker={legacyHome.shoes.kicker}
         title={legacyAbout.title}
-        lede={legacyHome.shoes.body}
+        lede="Trivium Sports introduces tennis coaches and players to U.S. clubs and academies. The work is measured by how carefully people are placed."
         actions={
           <>
-            <PrimaryLink href={routes.contact}>Meet the Team</PrimaryLink>
-            <SecondaryLink href={routes.howItWorks}>Who we are</SecondaryLink>
+            <PrimaryLink href="#team">Meet the team</PrimaryLink>
+            <SecondaryLink href="#who-we-are">Who we are</SecondaryLink>
           </>
         }
       />
 
-      <Section>
+      <Section id="who-we-are">
         <h2 className="text-3xl font-semibold tracking-tight">{legacyAbout.whoHeading}</h2>
         <p className="mt-4 max-w-3xl text-base leading-7 text-ink-muted">{legacyAbout.whoBody}</p>
         <h2 className="mt-12 text-3xl font-semibold tracking-tight">{legacyHome.shoes.h2}</h2>
@@ -52,13 +52,29 @@ export default function AboutPage() {
         </ul>
       </Section>
 
-      <Section>
+      <Section id="team">
         <p className="text-sm font-semibold uppercase tracking-[0.18em] text-brand-deep">
           {legacyAbout.specialistsKicker}
         </p>
         <h2 className="mt-3 text-3xl font-semibold tracking-tight">{legacyAbout.foundersHeading}</h2>
         <ul className="mt-10 grid gap-6 lg:grid-cols-3">
           {legacyAbout.founders.map((person) => (
+            <li key={person.name}>
+              <article className="flex h-full flex-col rounded-3xl border border-line bg-canvas-elevated p-6">
+                <h3 className="text-xl font-semibold tracking-tight">{person.name}</h3>
+                <p className="mt-2 text-sm font-semibold text-brand-deep">{person.role}</p>
+                <p className="mt-4 text-sm leading-6 text-ink-muted">{person.body}</p>
+              </article>
+            </li>
+          ))}
+        </ul>
+
+        <h2 className="mt-16 text-3xl font-semibold tracking-tight">{legacyAbout.advisoryHeading}</h2>
+        <p className="mt-4 max-w-3xl text-base leading-7 text-ink-muted">
+          Juan Carlos and Miguel advise Trivium on tennis talent and coach development.
+        </p>
+        <ul className="mt-10 grid gap-6 lg:grid-cols-2">
+          {legacyAbout.advisors.map((person) => (
             <li key={person.name}>
               <article className="flex h-full flex-col rounded-3xl border border-line bg-canvas-elevated p-6">
                 <h3 className="text-xl font-semibold tracking-tight">{person.name}</h3>
@@ -75,7 +91,7 @@ export default function AboutPage() {
         <p className="mt-4 max-w-3xl text-base leading-7 text-ink-muted">{legacyHome.mission.p1}</p>
         <p className="mt-4 max-w-3xl text-base leading-7 text-ink-muted">{legacyHome.mission.p2}</p>
         <p className="mt-4 max-w-3xl text-base leading-7 text-ink-muted">{legacyHome.mission.p3}</p>
-        <ul className="mt-10 grid gap-6 md:grid-cols-3">
+        <ul className="mt-10 grid gap-6 md:grid-cols-2">
           {legacyHome.standards.map((item) => (
             <Card key={item.title} title={item.title}>
               <p>{item.body}</p>
@@ -84,7 +100,7 @@ export default function AboutPage() {
         </ul>
       </Section>
 
-      <CtaBand title={legacyAbout.ctaTitle} lede={legacyAbout.ctaLede} href={routes.contact} label="Send Message" />
+      <CtaBand title={legacyAbout.ctaTitle} lede={legacyAbout.ctaLede} href={routes.contact} label="Send message" />
     </main>
   );
 }

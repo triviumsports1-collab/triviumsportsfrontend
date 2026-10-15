@@ -1,13 +1,16 @@
+import { notFound } from "next/navigation";
 import { JobBoard } from "@/components/marketing/job-board";
 import { PageHero, Section } from "@/components/marketing/page-shell";
 import { PageSeo } from "@/components/seo/page-seo";
 import { JOB_BOARD_PAGE_SIZE, listPublishedJobs } from "@/lib/jobs/public";
 import { pageMetadata } from "@/lib/seo";
-import { routes } from "@/lib/site";
+import { jobsBoardPublic, routes } from "@/lib/site";
 
-export const revalidate = 0;
+export const dynamic = "force-dynamic";
 
-export const metadata = pageMetadata("jobsBoard");
+export const metadata = jobsBoardPublic
+  ? pageMetadata("jobsBoard")
+  : { title: "Page not found", robots: { index: false, follow: false } };
 
 function parsePage(raw: string | undefined): number {
   const value = Number(raw ?? "1");
@@ -22,6 +25,9 @@ export default async function JobsIndexPage({
 }: {
   searchParams: Promise<{ page?: string; q?: string; state?: string; roleType?: string }>;
 }) {
+  if (!jobsBoardPublic) {
+    notFound();
+  }
   const params = await searchParams;
   const page = parsePage(params.page);
   const q = (params.q ?? "").trim();
@@ -43,7 +49,7 @@ export default async function JobsIndexPage({
         crumbs={[{ name: "Jobs", href: routes.jobsBoard }]}
         kicker="Jobs"
         title="Open tennis coaching roles at U.S. clubs."
-        lede="Newest listings first. Each card is a published tennis role — title, city, and apply path are in this HTML for you and for search engines."
+        lede="Newest listings first. Each card is an open tennis role at a U.S. club or academy."
       />
       <Section>
         <JobBoard

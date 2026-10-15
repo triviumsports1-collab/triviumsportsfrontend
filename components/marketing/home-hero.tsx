@@ -61,21 +61,21 @@ const featureCards = [
   {
     href: routes.coaches,
     title: "For Coaches",
-    body: "Get matched with U.S. opportunities and let us coordinate work authorization.",
+    body: "Introductions to U.S. clubs for tennis coaches already in the country on OPT or STEM OPT.",
     link: "Explore for Coaches",
     icon: CoachIcon,
   },
   {
     href: routes.clubs,
     title: "For Clubs",
-    body: "Find qualified international tennis coaches. Trivium coaches work at clubs.",
+    body: "Find qualified international tennis coaches. Coaches placed by Trivium work on your courts.",
     link: "Explore for Clubs",
     icon: ClubIcon,
   },
   {
     href: routes.players,
     title: "For Players",
-    body: "Access coaching and support for your next chapter in the United States.",
+    body: "Academy placement, training blocks, and competition planning for international tennis players.",
     link: "Explore for Players",
     icon: PlayerIcon,
   },
@@ -107,18 +107,19 @@ export function HomeHero() {
             International talent. U.S. opportunity.
           </p>
           <h1 className="mt-4 max-w-2xl text-4xl font-bold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-6xl xl:text-7xl">
-            <span className="block">Tennis careers</span>
-            without <span className="text-brand">borders.</span>
+            <span className="block">Tennis careers </span>
+            <span className="block">
+              without <span className="text-brand">borders.</span>
+            </span>
           </h1>
           <p className="mt-6 max-w-lg text-base leading-7 text-white/85 sm:text-lg sm:leading-8">
-            Trivium Sports connects international tennis coaches with U.S. clubs, academies, and
-            touring professionals — and coordinates the visa and immigration process so you can
-            focus on tennis.
+            Trivium Sports connects international tennis coaches and post-collegiate players with
+            U.S. clubs and academies.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
             <a
               href={routes.getStarted}
-              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-brand px-7 text-base font-semibold text-white hover:bg-brand-deep"
+              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-brand px-7 text-base font-semibold text-ink hover:bg-brand-deep hover:text-canvas-elevated"
             >
               Find Your Path
               <ArrowIcon />

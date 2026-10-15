@@ -13,8 +13,8 @@ export default function GetStartedPage() {
       <PageHero
         crumbs={[{ name: "Get started", href: routes.getStarted }]}
         kicker="Get started"
-        title="Select your path before we ask a single tennis question."
-        lede="Coach, player, or club — the form stays closed until you choose. That is how we keep the conversation professional and relevant."
+        title="Tell us whether you coach, play, or run a club."
+        lede="Choose coach, player, or club. We will ask the tennis questions that fit that path."
       />
       <Section tone="elevated">
         <IntakeSection />

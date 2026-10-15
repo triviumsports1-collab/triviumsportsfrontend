@@ -6,7 +6,7 @@ import { JsonLd } from "@/components/seo/json-ld";
 import { breadcrumbJsonLd } from "@/lib/schema";
 import { getPublishedJob } from "@/lib/jobs/public";
 import { absoluteUrl } from "@/lib/seo";
-import { routes } from "@/lib/site";
+import { jobsBoardPublic, routes } from "@/lib/site";
 
 export const revalidate = 120;
 
@@ -15,6 +15,9 @@ export async function generateMetadata({
 }: {
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
+  if (!jobsBoardPublic) {
+    return { title: "Roles", robots: { index: false, follow: false } };
+  }
   const { slug } = await params;
   const job = await getPublishedJob(slug);
   if (!job) {
@@ -29,6 +32,9 @@ export async function generateMetadata({
 }
 
 export default async function JobApplyPage({ params }: { params: Promise<{ slug: string }> }) {
+  if (!jobsBoardPublic) {
+    notFound();
+  }
   const { slug } = await params;
   const job = await getPublishedJob(slug);
   if (!job) {

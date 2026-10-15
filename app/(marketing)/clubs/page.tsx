@@ -61,8 +61,8 @@ export default function ClubsPage() {
       <Section tone="elevated">
         <h2 className="text-3xl font-semibold tracking-tight">For Employers and Clubs</h2>
         <p className="mt-4 max-w-3xl text-base leading-7 text-ink-muted">
-          Access pre-screened international coaching talent while we streamline authorization,
-          onboarding, and fit so your program can focus on performance and retention.
+          Access pre-screened international tennis coaches. We help with introductions, timing, and
+          fit, then stay available with retention check-ins so your program can focus on tennis.
         </p>
         <div className="mt-8">
           <FaqBlock items={legacyClubFaqs} />

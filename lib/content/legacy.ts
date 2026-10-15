@@ -1,19 +1,19 @@
 import type { Pillar } from "@/lib/content/landings";
 
-/** Verbatim public copy sourced from https://triviumsports.com (Sep 2026). Do not rewrite. */
+/** Public marketing copy. Pre-launch punch list (Oct 2026) overrides earlier verbatim legacy text. */
 
 export const legacyHome = {
   h1: "Coaching placements for student-athletes and coaches",
-  lede: "We connect graduating athletes and qualified talent with vetted U.S. clubs and academies. Expect clear steps, visa support, and lasting mentorship.",
+  lede: "We connect graduating tennis players and qualified coaches with U.S. clubs and academies. Expect clear steps and lasting mentorship.",
   clearPath: {
     h2: "A Clear Path Where There Was None",
     p1: "Every year, thousands of international student-athletes graduate from U.S. colleges with the training, mindset, and desire to stay involved in sport through coaching.",
-    p2: "We remove the friction. We match you with quality programs, make visas understandable, and support you beyond day one so you can build a meaningful career in the U.S.",
+    p2: "We remove the friction. We match you with quality tennis programs and support you beyond day one so you can build a meaningful coaching chapter in the U.S.",
   },
   mission: {
     h2: "More Than a Match. A Mission.",
-    p1: "We operate with ethics, clarity, and full compliance.",
-    p2: "Every placement follows documented standards, verified partners, and clear agreements. We work with immigration counsel, confirm employer obligations, and keep an auditable record from screening to start date.",
+    p1: "We operate with ethics and a clear process.",
+    p2: "Every placement follows documented standards and verified tennis partners. We work with immigration counsel. We do not decide whether someone qualifies to work.",
     p3: "People first, rules followed, outcomes measured.",
   },
   standards: [
@@ -22,83 +22,79 @@ export const legacyHome = {
       body: "Each candidate is assessed against documented criteria using a standardized rubric, with scores and recorded outcomes ensuring traceability.",
     },
     {
-      title: "Legal Readiness",
-      body: "Immigration counsel validates the appropriate work authorization path and timing, and we confirm status and eligibility before any offer.",
-    },
-    {
-      title: "Employer Compliance",
-      body: "Partners commit to I-9 verification, wage compliance, and safeguarding policies, formalized in agreements and reviewed periodically for accountability.",
+      title: "Counsel on timing",
+      body: "We work with immigration counsel on timing. We do not decide eligibility, and we do not file petitions.",
     },
   ],
   whoWeServe:
     "Tailored services for student-athletes, coaches, and employers, with role-specific guidance and clear next steps.",
   forStudentAthletes:
-    "Turn high performance habits into coaching impact in the U.S. Get step by step OPT support, interview prep, curated introductions, and mentorship through your first season.",
+    "Turn college tennis habits into a coaching chapter in the U.S. We explain OPT and STEM OPT in plain language, prepare you for club conversations, and stay in touch through the first season.",
   forCoaches:
-    "Advance your coaching career with roles in youth and high-performance settings. We welcome former college players, licensed coaches, and growth-minded international candidates.",
+    "Advance a tennis coaching career at U.S. clubs while you are already in the United States, including on OPT or STEM OPT.",
   forClubs:
-    "Hire disciplined, globally minded coaches who elevate your program and culture. We manage sourcing, structured screening, and counsel supported compliance support on clear timelines.",
+    "Hire disciplined, globally minded tennis coaches who elevate your program and culture. We manage sourcing and structured screening, with counsel-supported compliance, on clear timelines.",
   shoes: {
     kicker: "WHO WE ARE",
     h2: "We’ve Been in Your Shoes",
-    body: "Trivium Sports was founded by three professionals with deep international experience in the sports industry. With strong roots in racquet sports and a shared commitment to coach development, we’ve seen the challenges firsthand and built a more thoughtful, supportive path forward.",
+    body: "Trivium Sports was founded by people with deep experience in tennis. With roots in the college game, club coaching, and coach development, we’ve seen the challenges firsthand and built a more thoughtful, supportive path forward.",
   },
   footerMission:
-    "We unlock careers across borders. From daily reps to your first session as a mentor, we connect student-athletes and coaches with vetted roles and walk the legal path with you.",
+    "We unlock tennis careers across borders. From daily reps to a first session as a mentor, we connect student-athletes and coaches with U.S. clubs. We work with immigration counsel.",
 } as const;
 
 export const legacyCoaches = {
-  kicker: "Your are ready to Coach. We are here to help you grow.",
-  title: "Turn experience into a U.S. coaching career",
-  lede: "You have real in-sport experience. We help international coaches and former student-athletes secure coaching placements with vetted U.S. clubs, academies, and schools across youth and high-performance environments. Build a long-term coaching career in the United States with compliant hiring, clear timelines, and support that continues after placement.",
+  kicker: "You are ready to coach. We are here to help you grow.",
+  title: "Tennis coaching in the U.S., for coaches already here.",
+  lede: "This page is for international tennis coaches already in the United States, usually on OPT or STEM OPT. If you can run clinics, private lessons, and junior development, we introduce you to clubs and academies whose calendars match how you teach.",
   whatYouGetHeading: "What you get",
   whatYouGet: [
-    "Vetted coaching jobs nationwide with curated introductions",
-    "Work authorization and compliance guidance with counsel support",
-    "Interview prep, resume polish, and role fit by sport and level",
-    "Ongoing mentorship and performance check-ins",
+    "Introductions to U.S. tennis clubs and academies",
+    "A plain-language conversation about the OPT or STEM OPT window you already have",
+    "Interview preparation and a tennis résumé directors can read",
+    "Mentorship and check-ins after you are on court",
   ],
   expectHeading: "What you can expect from us",
   expectP1:
-    "We do not just match you with a job and disappear. We help international coaches build meaningful careers with purpose, stability, and support. If you want to stay in the U.S. but your visa timeline feels uncertain, if you struggle to find roles that fit your values and strengths, if applications go unanswered, if part-time work feels limiting, or if you are ready to grow without a clear next step, we can help.",
-  expectP2: "We bring structure, legal clarity, and real opportunities to move you forward.",
+    "We do not match you with a club and disappear. If you are already in the United States, your OPT or STEM OPT timeline feels tight, club applications go unanswered, or you want a full tennis day instead of leftover hours, we can help you have a serious conversation with the right director.",
+  expectP2: "We bring structure and real tennis opportunities so you can move forward. We work with immigration counsel. We do not decide whether you qualify.",
   pillars: [
     {
       icon: "professionals",
-      title: "Coaching opportunities that fit",
-      body: "We connect you with clubs and programs that match your strengths, goals, and personality. Fit matters for you and for the organizations we work with.",
+      title: "Tennis roles that fit",
+      body: "We introduce you to clubs and academies that match how you teach: juniors, adults, clinics, and private lessons. Fit matters for you and for the program.",
     },
     {
       icon: "compliance",
-      title: "Legal and Visa guidance",
-      body: "We walk you through employment eligibility and visa options like OPT, O1, and P1. We also work closely with immigration attorneys to support you and your future employer every step of the way.",
+      title: "OPT and STEM OPT, in tennis terms",
+      body: "We talk through the authorization window you already have or are arranging with your DSO. We work with immigration counsel. We do not tell you whether you qualify, and we do not file petitions.",
     },
     {
       icon: "pathway",
-      title: "Ongoing mentorship",
-      body: "Your coaching journey does not end at placement. We check in regularly to offer support, professional advice, and help as you grow in your role.",
+      title: "Mentorship and check-ins",
+      body: "Placement is the start. We check in as you learn the club calendar, the members, and the standard the director expects.",
     },
     {
       icon: "architecture",
-      title: "A professional network that cares",
-      body: "You will be part of a trusted community that values character, curiosity, and a shared commitment to sport. We take your development seriously.",
+      title: "A tennis network that stays",
+      body: "You join coaches who care about player development and professional habits. We take your development seriously.",
     },
   ] satisfies readonly Pillar[],
-  ctaTitle: "Build your career your confidence",
-  ctaLede: "Personalized matches, compliant hiring, and a network committed to your development.",
+  ctaTitle: "Build your career and your confidence",
+  ctaLede: "Tennis introductions, a clear timeline, and a network committed to your development on court.",
   lookingHeading: "Who we’re looking for",
   lookingP1:
-    "We partner with coaches who see this as a calling, not just a job, and who want to make a real impact on players and programs. Our ideal candidates are international graduates eligible to work in the U.S., passionate about teaching and player development, professional, respectful, adaptable, and eager to grow.",
-  lookingP2: "If this sounds like you, we would love to hear your story.",
+    "We partner with tennis coaches already in the United States who treat teaching as a craft. Ideal candidates are eligible to work, often on OPT or STEM OPT, serious about player development, and ready for early courts and weekend clinics.",
+  lookingP2: "If you are still abroad, write to us and we will tell you honestly whether a conversation makes sense. If this sounds like you, we would like to hear your tennis story.",
 } as const;
 
 export const legacyClubs = {
   kicker: "FOR EMPLOYERS",
-  title: "Reliable coaching talent. Global Perspective. Full-service support.",
-  lede: "Each year, standout international graduates are ready to coach in the U.S. We deliver curated shortlists and handle compliance so your program can move fast.",
+  title: "Reliable tennis coaching talent, a global perspective, and full-service support.",
+  lede: "Each year, standout international tennis graduates are ready to coach in the U.S. We deliver curated shortlists so your program can move on a clear timeline.",
   expectHeading: "What you can expect from us",
   expectP1:
-    "We reduce hiring risk with a transparent, auditable process that stays human. From day one we align role scope, culture, and timelines, then provide structure and legal clarity at every step.",
+    "We reduce hiring risk with a transparent process that stays human. From day one we align role scope, culture, and timelines. When a placement raises an immigration question, we work with immigration counsel.",
   expectP2:
     "You receive structured interview notes and reference summaries, regular updates through a single point of contact, and shortlists you can evaluate with confidence.",
   expectP3:
@@ -111,8 +107,8 @@ export const legacyClubs = {
     },
     {
       icon: "compliance",
-      title: "Coaches Ready to Work",
-      body: "We manage the legal and logistical steps so you can focus on your program. Our team collaborates directly with the coach and experienced immigration attorneys to ensure everything is handled properly, with full compliance and minimal effort required from your side.",
+      title: "Coaches ready to work",
+      body: "We coordinate the practical steps of a tennis placement so you can focus on your program. When immigration questions come up, we work with immigration counsel.",
     },
     {
       icon: "architecture",
@@ -122,14 +118,14 @@ export const legacyClubs = {
     {
       icon: "pathway",
       title: "Continued support",
-      body: "You will be part of a trusted community that values character, curiosity, and a shared commitment to sport. We take your development seriously.",
+      body: "After a coach starts, directors get retention check-ins and a single point of contact. We stay involved so the placement can last.",
     },
   ] satisfies readonly Pillar[],
   ctaTitle: "Hire with confidence",
-  ctaLede: "Share your role. We deliver a curated shortlist with eligibility confirmed and timelines aligned.",
+  ctaLede: "Share your role. We deliver a curated shortlist and a clear timeline.",
   whoHeading: "Who we work with",
   whoBody:
-    "We partner with clubs, training centers, schools, academies, and youth programs that invest in growth and strong culture. Year round or seasonal, we source reliable coaching talent that fits your standards and supports long term success.",
+    "We partner with U.S. tennis clubs, academies, and training centers that invest in growth and a strong on-court culture. Year-round or seasonal, we source tennis coaches who fit your standard.",
 } as const;
 
 export const legacyStudentAthletes = {
@@ -138,7 +134,7 @@ export const legacyStudentAthletes = {
   lede: "Years of elite training translate directly to value in the role. Your habits, judgment, and leadership are what strong programs seek.",
   youBringHeading: "You bring:",
   youBring: [
-    "Team intelligence under pressure",
+    "A weekly training load you can sustain",
     "Leadership by example",
     "Clear communication and discipline",
     "Global perspective that strengthens culture",
@@ -161,16 +157,16 @@ export const legacyStudentAthletes = {
     {
       icon: "compliance",
       title: "Visa and OPT guidance",
-      body: "We support you and your future employer throughout the legal process, including OPT and longer-term options such as the O1 or P1 visa. We also work with experienced immigration attorneys to make sure everything is done correctly and compliantly.",
+      body: "We explain OPT in tennis terms and point status questions to your DSO. We work with immigration counsel. We do not decide whether you qualify.",
     },
     {
       icon: "pathway",
-      title: "Mentorship and check-Ins",
+      title: "Mentorship and check-ins",
       body: "Once you are placed, we stay in touch. We continue to offer guidance as you adjust to your role, develop as a coach, and plan your next steps.",
     },
   ] satisfies readonly Pillar[],
   ctaTitle: "Start with a plan",
-  ctaLede: "We map eligibility, prep interviews, and match you with programs that fit.",
+  ctaLede: "Tell us your tennis goals. We prepare the conversation and introduce you when the fit is real.",
   lookHeading: "What We Look For",
   lookP1:
     "You don’t need coaching experience to get started. We’re looking for international student-athletes who are ready to learn, grow, and make a difference.",
@@ -188,10 +184,10 @@ export const legacyAbout = {
   title: "Built by coaches. Powered by purpose.",
   whoHeading: "Who we are",
   whoBody:
-    "Trivium Sports is a coach-centered initiative that connects international student-athletes and early-career coaches with trusted U.S. sports organizations. We focus on character-driven placements, lawful hiring, and long-term mentorship so coaches grow and clubs build stronger, more consistent programs. Our work sits at the intersection of global talent, coaching development, and youth sport leadership.",
+    "Trivium Sports introduces international student-athletes and early-career tennis coaches to U.S. clubs and academies. We focus on character, a clear process, and mentorship so coaches grow and clubs keep a consistent on-court standard.",
   whyHeading: "Why we started",
   whyBody:
-    "Every year, thousands of international student-athletes graduate with the discipline and mindset to coach, yet few have a clear path. At the same time, clubs, academies, and schools struggle to hire dependable, well-prepared staff. Trivium Sports bridges that gap by simplifying the process, removing legal and logistical barriers, and aligning coaches and organizations for lasting success.",
+    "Every year, thousands of international student-athletes graduate with the discipline and mindset to coach, yet few have a clear path into U.S. tennis clubs. Academies still need dependable, well-prepared staff. Trivium Sports makes that introduction and stays available after the coach is on the schedule.",
   approachHeading: "Our approach",
   approachLede:
     "We are not a shortcut. We are a long-term partner for organizations that value development, integrity, and doing things the right way.",
@@ -202,7 +198,7 @@ export const legacyAbout = {
     },
     {
       title: "Support",
-      body: "Hands-on guidance through each step, including compliance, cultural adaptation, and employment requirements, so everything is handled correctly and responsibly.",
+      body: "Hands-on guidance through each step, including cultural adaptation and a clear timeline, so the introduction is handled responsibly.",
     },
     {
       title: "Character",
@@ -214,27 +210,30 @@ export const legacyAbout = {
     },
   ],
   specialistsKicker: "DISCOVER THE SPECIALISTS",
-  foundersHeading: "Meet the founders",
+  foundersHeading: "Meet the founder",
   founders: [
-    {
-      name: "Juan Carlos Bàguena",
-      role: "Global Talent Network and Scouting",
-      body: "Tennis coach, former ATP player, and program director with 30 years in high-performance tennis. He has coached top-50 ATP and WTA players, led programs at international academies in Spain, and founded Barcelona Tennis Academy. He also created Top Tennis Careers, a placement and consulting platform for coaches worldwide.",
-    },
-    {
-      name: "Miguel Coelho",
-      role: "Learning and Coaching Development",
-      body: "Tennis coach, educator, and program director with 25 years of experience in Portugal, Spain, and the United States, working with athletes from beginners to ATP, WTA, and ITF professionals. A strong advocate for coach development, he contributes to coach education with the USTA. He holds a master’s in High-Performance Tennis and a PhD from the University of Arizona.",
-    },
     {
       name: "Patrick Szymczak",
       role: "Employer Partnerships and Placement",
       body: "Former international student-athlete who came to the United States on a tennis scholarship. After earning both bachelor’s and master’s degrees, he coached at the Division I level and later founded an academy serving athletes across the Phoenix Valley. Having navigated immigration and career-building firsthand, he brings practical insight into how international coaches build careers in the United States.",
     },
   ],
+  advisoryHeading: "Advisory Board",
+  advisors: [
+    {
+      name: "Juan Carlos Baguena",
+      role: "Advisor, Global Talent Network and Scouting",
+      body: "Tennis coach, former ATP player, and program director with 30 years in high-performance tennis. He has coached top-50 ATP and WTA players, led programs at international academies in Spain, and founded Barcelona Tennis Academy. He also created Top Tennis Careers, a placement and consulting platform for coaches worldwide.",
+    },
+    {
+      name: "Miguel Coelho",
+      role: "Advisor, Learning and Coaching Development",
+      body: "Tennis coach, educator, and program director with 25 years of experience in Portugal, Spain, and the United States, working with athletes from beginners to ATP, WTA, and ITF professionals. A strong advocate for coach development, he contributes to coach education with the USTA. He holds a master’s in High-Performance Tennis and a PhD from the University of Arizona.",
+    },
+  ],
   ctaTitle: "Ready to connect",
   ctaLede:
-    "We build programs and careers that last through compliant hiring, curated matches, and mentorship that continues beyond day one.",
+    "We build programs and careers that last through careful introductions, curated matches, and mentorship that continues beyond day one.",
 } as const;
 
 export const legacyHowItWorks = {
@@ -244,7 +243,7 @@ export const legacyHowItWorks = {
   coachSteps: [
     {
       t: "1. Apply or reach out",
-      d: "Share your background, sport, location preferences, and timeline. We serve multiple sports across U.S. clubs, academies, and schools.",
+      d: "Share your tennis background, where you can live, and your timeline. We work with U.S. clubs and academies.",
     },
     {
       t: "2. Intro call and plan",
@@ -270,17 +269,17 @@ export const legacyHowItWorks = {
     },
     {
       t: "3. Eligibility and paperwork",
-      d: "We coordinate work authorization and confirm employer obligations for a compliant, low-effort process.",
+      d: "When a placement needs it, we work with immigration counsel and keep the club timeline clear.",
     },
     {
       t: "4. Onboard and retain",
-      d: "Align expectations, support integration, and track early milestones for stronger retention..",
+      d: "Align expectations, support integration, and track early milestones for stronger retention.",
     },
   ],
   differentHeading: "What makes our process different",
   different: [
     { title: "Clear guidance", body: "We walk you through every step with transparency and care." },
-    { title: "Full compliance", body: "We follow a legal, ethical process focused on long-term success." },
+    { title: "A careful process", body: "We follow an ethical process focused on long-term tennis relationships. We work with immigration counsel." },
     { title: "Thoughtful matching", body: "We ensure strong alignment before any introductions are made." },
     {
       title: "Future-oriented support",
@@ -293,7 +292,7 @@ export const legacyHowItWorks = {
 export const legacyCoachFaqs = [
   {
     q: "What is Trivium Sports?",
-    a: "Trivium Sports connects international student-athletes and early-career coaches with trusted sports organizations in the U.S. We offer career placement, visa support, and long-term coaching development opportunities.",
+    a: "Trivium Sports introduces international student-athletes and early-career tennis coaches to U.S. clubs and academies. We help with the tennis transition and stay involved after a coach is on court. We work with immigration counsel.",
   },
   {
     q: "Can I apply before I graduate?",
@@ -305,11 +304,11 @@ export const legacyCoachFaqs = [
   },
   {
     q: "Can I work in the U.S. after I graduate?",
-    a: "Yes, most international students are eligible for Optional Practical Training (OPT) after graduation. This temporary work authorization allows you to gain coaching experience in your field of study for up to 12 months.",
+    a: "Many international students can apply for Optional Practical Training (OPT) after graduation. Whether coaching fits depends on your degree field and your DSO. It is not automatic, and it is not a tennis visa.",
   },
   {
     q: "What happens after my OPT ends?",
-    a: "We support you and your future employer in exploring longer-term options such as the O1 or P1 visas, which allow international professionals to continue working in the U.S. We work closely with immigration attorneys to guide this process.",
+    a: "Any longer stay depends on your own case. We work with immigration counsel. We do not recommend a visa category on this website.",
   },
   {
     q: "Can I choose where I want to live or work?",
@@ -317,37 +316,25 @@ export const legacyCoachFaqs = [
   },
   {
     q: "What kind of support will I receive after placement?",
-    a: "We offer ongoing mentorship, check-ins, and legal support. Our goal is to help you succeed not just in getting hired, but in developing your career and adapting to your new environment.",
+    a: "We offer ongoing mentorship and check-ins. The goal is to help you settle into the club and keep developing as a tennis coach.",
   },
 ] as const;
 
 export const legacyOptFaqs = [
   {
     q: "What is OPT and how does it work?",
-    a: "OPT stands for Optional Practical Training. It is a 12-month work authorization available to international students on F-1 visas after completing their degree. It allows recent graduates to work in a field related to their studies. Coaching often qualifies. We guide you through every step.",
-  },
-  {
-    q: "What is the O1 visa?",
-    a: "The O1 visa is for individuals with “extraordinary ability” in fields such as athletics, arts, or education. It can be a longer-term option for coaches after OPT, especially those with collegiate playing experience, awards, or significant contributions in sport.",
-  },
-  {
-    q: "What is the P1 visa?",
-    a: "The P1 visa is designed for internationally recognized athletes and coaches. It is sometimes used in team sports and high-level coaching environments. We assess each case and work with immigration attorneys to determine the best path forward.",
+    a: "OPT stands for Optional Practical Training. It is work authorization available to many F-1 students after a qualifying U.S. degree, in a field related to their studies. Coaching qualifies only when the degree field and your DSO’s guidance align. We work with immigration counsel and do not decide eligibility.",
   },
   {
     q: "Do you provide legal services directly?",
-    a: "No. We are not a law firm. However, we collaborate closely with licensed immigration attorneys who advise and support both coaches and employers throughout the placement process.",
+    a: "No. We are not a law firm and do not provide immigration advice. We work with immigration counsel. Your DSO remains the authority on student status.",
   },
 ] as const;
 
 export const legacyClubFaqs = [
   {
-    q: "Do I have to sponsor a visa?",
-    a: "We work closely with each coach to ensure they are legally authorized to work in the U.S. Our team, along with trusted immigration attorneys, manages the necessary steps to keep the process smooth and compliant for your organization. You will receive clear guidance and minimal paperwork.",
-  },
-  {
     q: "What is the time frame for hiring a coach?",
-    a: "Depending on your needs and the coach’s eligibility, placement can take anywhere from a few weeks to a couple of months. Starting early allows us to coordinate the legal and onboarding steps more efficiently.",
+    a: "Depending on your needs and the coach’s situation, placement can take anywhere from a few weeks to a couple of months. Starting early gives everyone a clearer calendar.",
   },
   {
     q: "Is there a minimum contract length or commitment?",

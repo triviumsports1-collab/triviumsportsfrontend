@@ -20,7 +20,7 @@ export default function HowItWorksPage() {
         crumbs={[{ name: "How it works", href: routes.howItWorks }]}
         kicker="How it works"
         title="Three audiences. One tennis standard."
-        lede="The process is simple on purpose. We do not run a public job board or a drop-in marketplace. Each path starts with an intake, then a human review."
+        lede="The process is simple on purpose. We do not run a public job board. Each path starts with a conversation, then a human review."
         actions={<PrimaryLink href={routes.getStarted}>Get started</PrimaryLink>}
       />
 
@@ -46,7 +46,7 @@ export default function HowItWorksPage() {
 
       <CtaBand
         title="Begin with the correct intake."
-        lede="Coach, player, or club — the form will not skip that choice."
+        lede="Coach, player, or club. Start with the path that matches you."
       />
     </main>
   );

@@ -24,7 +24,7 @@ const paths: { id: AudiencePath; title: string; lede: string }[] = [
   {
     id: "player",
     title: "Player",
-    lede: "U.S. college tennis, training blocks, or a next chapter after eligibility.",
+    lede: "Academy placement, training blocks, and competition planning. Adults 18 and older.",
   },
   {
     id: "club",

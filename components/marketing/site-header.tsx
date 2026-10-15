@@ -66,12 +66,6 @@ export function SiteHeader() {
 
         <div className="hidden items-center gap-3 xl:flex">
           <a
-            href={routes.login}
-            className="inline-flex min-h-11 items-center rounded-full px-4 text-sm font-medium text-white/90 hover:text-white"
-          >
-            Sign in
-          </a>
-          <a
             href={routes.getStarted}
             className="inline-flex min-h-11 items-center rounded-full bg-brand px-5 text-sm font-semibold text-ink hover:bg-brand-deep hover:text-canvas-elevated"
           >
@@ -109,13 +103,6 @@ export function SiteHeader() {
                 {link.label}
               </a>
             ))}
-            <a
-              href={routes.login}
-              className="mt-2 inline-flex min-h-12 items-center justify-center rounded-full border border-white/30 px-5 text-sm font-semibold text-white"
-              onClick={() => setOpen(false)}
-            >
-              Sign in
-            </a>
             <a
               href={routes.getStarted}
               className="mt-2 inline-flex min-h-12 items-center justify-center rounded-full bg-brand px-5 text-sm font-semibold text-ink"

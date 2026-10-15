@@ -38,7 +38,7 @@ export default function OpenGraphImage() {
             maxWidth: 900,
           }}
         >
-          Tennis coaches. U.S. clubs. Nothing else.
+          Tennis coaches for U.S. clubs.
         </div>
       </div>
     ),

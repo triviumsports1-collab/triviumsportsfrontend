@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { routes, site } from "@/lib/site";
+import { jobsBoardPublic, routes, site } from "@/lib/site";
 
 export type SeoPage = {
   path: string;
@@ -15,7 +15,7 @@ export const pages: Record<MarketingRoute, SeoPage> = {
     path: routes.home,
     title: "Tennis Coaches for U.S. Clubs | International & Collegiate",
     description:
-      "Trivium Sports is a tennis-exclusive agency placing international and post-collegiate coaches with U.S. clubs and academies. OPT, STEM OPT, and club-ready professionals.",
+      "Trivium Sports places international and post-collegiate tennis coaches with U.S. clubs and academies. OPT, STEM OPT, and club-ready professionals.",
     keywords: [
       "tennis coaches USA",
       "international tennis coaches",
@@ -25,9 +25,9 @@ export const pages: Record<MarketingRoute, SeoPage> = {
   },
   coaches: {
     path: routes.coaches,
-    title: "coaching jobs in USA for coaches | coach hiring with visa support",
+    title: "Tennis Coaches in the USA | OPT and STEM OPT",
     description:
-      "You have real in-sport experience. We help international coaches and former student-athletes secure coaching placements with vetted U.S. clubs, academies, and schools across youth and high-performance environments.",
+      "For international tennis coaches already in the United States on OPT or STEM OPT. Introductions to U.S. clubs and academies. We work with immigration counsel.",
     keywords: [
       "international tennis coaches USA",
       "OPT tennis coach",
@@ -37,9 +37,9 @@ export const pages: Record<MarketingRoute, SeoPage> = {
   },
   afterCollege: {
     path: routes.afterCollege,
-    title: "From Student-Athlete to Coach: Your Next Chapter Starts Here",
+    title: "Coaching after College Tennis | OPT and STEM OPT",
     description:
-      "Turn high performance habits into coaching impact in the U.S. Get step by step OPT support, interview prep, curated introductions, and mentorship through your first season.",
+      "Optional Practical Training and STEM OPT, explained for former college tennis players who want to coach at U.S. clubs. We work with immigration counsel and do not decide eligibility.",
     keywords: [
       "coaching after college tennis",
       "OPT tennis coaching",
@@ -50,9 +50,9 @@ export const pages: Record<MarketingRoute, SeoPage> = {
   },
   jobs: {
     path: routes.jobs,
-    title: "Coaching Jobs USA | Sports Recruitment Agency",
+    title: "Tennis Coaching Jobs USA | Club and Academy Roles",
     description:
-      "We connect graduating athletes and qualified talent with vetted U.S. clubs and academies. Expect clear steps, visa support, and lasting mentorship.",
+      "Club professional, high-performance, junior development, and director-adjacent tennis roles at U.S. clubs. Tell us about your background for a considered introduction.",
     keywords: [
       "tennis coaching jobs USA",
       "club tennis pro jobs",
@@ -64,7 +64,7 @@ export const pages: Record<MarketingRoute, SeoPage> = {
     path: routes.jobsBoard,
     title: "Open Tennis Coaching Roles at U.S. Clubs",
     description:
-      "Published tennis coaching opportunities at U.S. clubs and academies. Server-rendered listings — titles and locations are in the page HTML.",
+      "Open tennis coaching roles at U.S. clubs and academies, listed when a club role is ready to share.",
     keywords: [
       "tennis coaching jobs USA",
       "U.S. tennis club coaching roles",
@@ -73,9 +73,9 @@ export const pages: Record<MarketingRoute, SeoPage> = {
   },
   players: {
     path: routes.players,
-    title: "College Sports Recruitment USA | Athlete Placement",
+    title: "Tennis Player Management USA | Academy Placement",
     description:
-      "Years of elite training translate directly to value in the role. Your habits, judgment, and leadership are what strong programs seek.",
+      "Player management for international adults: U.S. academy placement, training blocks, and competition planning. Not college recruiting.",
     keywords: [
       "international tennis academy USA",
       "tennis training United States",
@@ -85,9 +85,9 @@ export const pages: Record<MarketingRoute, SeoPage> = {
   },
   clubs: {
     path: routes.clubs,
-    title: "Hire Sports Coaches USA | Recruitment Agency",
+    title: "Hire Tennis Coaches USA | Clubs and Academies",
     description:
-      "Each year, standout international graduates are ready to coach in the U.S. We deliver curated shortlists and handle compliance so your program can move fast.",
+      "Curated shortlists of international tennis coaches for U.S. clubs and academies, with retention check-ins and a single point of contact.",
     keywords: [
       "tennis coaches for clubs",
       "tennis academy staffing",
@@ -97,7 +97,7 @@ export const pages: Record<MarketingRoute, SeoPage> = {
   },
   howItWorks: {
     path: routes.howItWorks,
-    title: "How Trivium Sports Works | Coaches, Players & Clubs",
+    title: "How Trivium Sports Works | Tennis Coaches, Players, and Clubs",
     description:
       "Step-by-step: how Trivium Sports works with tennis coaches, international players, and U.S. clubs — intake, review, introduction, on-court presence.",
     keywords: [
@@ -108,9 +108,9 @@ export const pages: Record<MarketingRoute, SeoPage> = {
   },
   about: {
     path: routes.about,
-    title: "Sports Recruitment Agency USA | About Trivium",
+    title: "About Trivium Sports | Tennis Coaching Agency USA",
     description:
-      "Trivium Sports is a coach-centered initiative that connects international student-athletes and early-career coaches with trusted U.S. sports organizations.",
+      "Trivium Sports introduces tennis coaches and players to U.S. clubs and academies. Meet the founder and the advisory board.",
     keywords: [
       "Trivium Sports",
       "tennis agency USA",
@@ -121,7 +121,7 @@ export const pages: Record<MarketingRoute, SeoPage> = {
     path: routes.faq,
     title: "Tennis Coaching FAQ | Coaches, Players & U.S. Clubs",
     description:
-      "Answers for OPT tennis coaches, international players, and U.S. club directors working with Trivium Sports. Immigration questions belong with your DSO and counsel.",
+      "Answers for OPT tennis coaches, international players, and U.S. club directors working with Trivium Sports. We work with immigration counsel.",
     keywords: [
       "tennis coaching FAQ",
       "OPT tennis coach questions",
@@ -137,9 +137,9 @@ export const pages: Record<MarketingRoute, SeoPage> = {
   },
   getStarted: {
     path: routes.getStarted,
-    title: "Get Started | Coach, Player, or Club Intake",
+    title: "Get Started | Tennis Coach, Player, or Club",
     description:
-      "Trivium Sports intake: choose Coach, Player, or Club first, then answer tennis questions that qualify the conversation.",
+      "Start with Trivium Sports by choosing tennis coach, player, or club. We ask only the questions that fit that path.",
     keywords: [
       "Trivium Sports intake",
       "tennis coach application USA",
@@ -148,9 +148,9 @@ export const pages: Record<MarketingRoute, SeoPage> = {
   },
   privacy: {
     path: routes.privacy,
-    title: "Privacy Policy | Immigration & Form Data",
+    title: "Privacy Policy | Trivium Sports Tennis",
     description:
-      "How Trivium Sports collects and protects personal information, including sensitive immigration status and form data. Public forms do not request passport or EAD uploads.",
+      "How Trivium Sports Inc. handles personal information submitted on this tennis website. Public forms do not request passport or EAD uploads.",
     keywords: ["Trivium Sports privacy policy"],
   },
 };
@@ -168,7 +168,10 @@ export function pageMetadata(key: keyof typeof pages): Metadata {
     description: page.description,
     keywords: page.keywords,
     alternates: { canonical: url },
-    robots: { index: true, follow: true },
+    robots:
+      key === "jobsBoard" && !jobsBoardPublic
+        ? { index: false, follow: false }
+        : { index: true, follow: true },
     openGraph: {
       type: "website",
       url,
@@ -176,13 +179,13 @@ export function pageMetadata(key: keyof typeof pages): Metadata {
       title: page.title,
       description: page.description,
       locale: "en_US",
-      images: [{ url: "/opengraph-image", alt: page.title }],
+      images: [{ url: absoluteUrl("/opengraph-image"), alt: page.title }],
     },
     twitter: {
       card: "summary_large_image",
       title: page.title,
       description: page.description,
-      images: ["/opengraph-image"],
+      images: [absoluteUrl("/opengraph-image")],
     },
   };
 }

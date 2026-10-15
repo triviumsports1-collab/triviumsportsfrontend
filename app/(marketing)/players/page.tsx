@@ -1,5 +1,6 @@
 import { IntakeSection } from "@/components/forms/intake-section";
 import {
+  Card,
   CtaBand,
   PageHero,
   PillarGrid,
@@ -8,7 +9,7 @@ import {
   Section,
 } from "@/components/marketing/page-shell";
 import { PageSeo } from "@/components/seo/page-seo";
-import { legacyHome, legacyStudentAthletes } from "@/lib/content/legacy";
+import { playerLanding } from "@/lib/content/landings";
 import { pageMetadata } from "@/lib/seo";
 import { routes } from "@/lib/site";
 
@@ -20,51 +21,50 @@ export default function PlayersPage() {
       <PageSeo page="players" crumbName="Players" />
       <PageHero
         crumbs={[{ name: "Players", href: routes.players }]}
-        kicker={legacyStudentAthletes.kicker}
-        title={legacyStudentAthletes.title}
-        lede={legacyStudentAthletes.lede}
+        kicker={playerLanding.kicker}
+        title={playerLanding.title}
+        lede={playerLanding.lede}
         actions={
           <>
-            <PrimaryLink href="#player-intake">Tell us about you →</PrimaryLink>
-            <SecondaryLink href={routes.afterCollege}>How it works</SecondaryLink>
+            <PrimaryLink href="#player-intake">Share your goals</PrimaryLink>
+            <SecondaryLink href={routes.howItWorks}>How it works</SecondaryLink>
           </>
         }
       />
 
       <Section>
-        <h2 className="text-3xl font-semibold tracking-tight">{legacyStudentAthletes.youBringHeading}</h2>
-        <p className="mt-4 text-xl font-semibold tracking-tight">{legacyStudentAthletes.advantage}</p>
-        <ul className="mt-8 grid gap-4 sm:grid-cols-2">
-          {legacyStudentAthletes.youBring.map((item) => (
-            <li
-              key={item}
-              className="rounded-3xl border border-line bg-canvas-elevated p-6 text-base leading-7 text-ink"
-            >
-              {item}
-            </li>
+        <h2 className="text-3xl font-semibold tracking-tight">Player management for a U.S. tennis stay</h2>
+        <p className="mt-4 max-w-3xl text-base leading-7 text-ink-muted">
+          Player management here means one professional point of contact for an adult who wants
+          academy placement, a defined training block, or competition planning in the United States.
+          It is not college recruiting, and it is not a program for minors.
+        </p>
+        <ul className="mt-8 grid gap-6 md:grid-cols-3">
+          {playerLanding.help.map((item) => (
+            <Card key={item.title} title={item.title}>
+              <p>{item.body}</p>
+            </Card>
           ))}
         </ul>
-        <p className="mt-8 max-w-3xl text-base leading-7 text-ink-muted">{legacyHome.forStudentAthletes}</p>
       </Section>
 
       <Section tone="elevated">
         <PillarGrid
-          heading={legacyStudentAthletes.expectHeading}
-          lede={legacyStudentAthletes.expect}
-          items={legacyStudentAthletes.pillars}
+          heading={playerLanding.pillarHeading}
+          lede={playerLanding.pillarLede}
+          items={playerLanding.pillars}
         />
       </Section>
 
       <Section>
-        <h2 className="text-3xl font-semibold tracking-tight">{legacyStudentAthletes.lookHeading}</h2>
-        <p className="mt-4 max-w-3xl text-base leading-7 text-ink-muted">{legacyStudentAthletes.lookP1}</p>
-        <h3 className="mt-8 text-xl font-semibold tracking-tight">{legacyStudentAthletes.lookH3}</h3>
-        <ul className="mt-4 max-w-3xl list-disc space-y-2 pl-5 text-base leading-7 text-ink-muted">
-          {legacyStudentAthletes.lookItems.map((item) => (
-            <li key={item}>{item}</li>
+        <h2 className="text-3xl font-semibold tracking-tight">Choose the shape of the stay</h2>
+        <ul className="mt-8 grid gap-6 md:grid-cols-3">
+          {playerLanding.compare.map((item) => (
+            <Card key={item.title} title={item.title}>
+              <p>{item.body}</p>
+            </Card>
           ))}
         </ul>
-        <p className="mt-6 max-w-3xl text-base leading-7 text-ink-muted">{legacyStudentAthletes.lookClose}</p>
       </Section>
 
       <Section tone="elevated" id="player-intake">
@@ -72,10 +72,10 @@ export default function PlayersPage() {
       </Section>
 
       <CtaBand
-        title={legacyStudentAthletes.ctaTitle}
-        lede={legacyStudentAthletes.ctaLede}
+        title="Share your goals"
+        lede="Level, dates, and whether you want a training block, an academy season, or a competition calendar."
         href="#player-intake"
-        label="share your goals"
+        label="Share your goals"
       />
     </main>
   );

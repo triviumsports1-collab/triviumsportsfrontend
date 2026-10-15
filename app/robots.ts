@@ -1,12 +1,21 @@
 import type { MetadataRoute } from "next";
-import { site } from "@/lib/site";
+import { headers } from "next/headers";
+import { jobsBoardPublic, site } from "@/lib/site";
 
-export default function robots(): MetadataRoute.Robots {
+export default async function robots(): Promise<MetadataRoute.Robots> {
+  const host = (await headers()).get("host") ?? "";
+  if (host.endsWith(".vercel.app")) {
+    return {
+      rules: { userAgent: "*", disallow: "/" },
+    };
+  }
   return {
     rules: {
       userAgent: "*",
-      allow: ["/", "/jobs", "/jobs/", "/organizations"],
-      disallow: ["/dashboard", "/login", "/register", "/api"],
+      allow: jobsBoardPublic ? ["/", "/jobs", "/jobs/", "/organizations"] : ["/", "/organizations"],
+      disallow: jobsBoardPublic
+        ? ["/dashboard", "/login", "/register", "/api"]
+        : ["/dashboard", "/login", "/register", "/api", "/jobs"],
     },
     sitemap: `${site.url}/sitemap.xml`,
   };

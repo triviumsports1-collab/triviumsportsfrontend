@@ -167,7 +167,7 @@ export function jobPostingJsonLd(job: {
     job.visaStance === "MUST_BE_AUTHORIZED"
       ? "U.S. work authorization required."
       : job.visaStance === "OPEN_TO_DISCUSSION"
-        ? "Club is open to discussing work authorization with licensed counsel."
+        ? "The club is open to discussing work authorization. We work with immigration counsel."
         : "";
   const description = [job.description.replace(/[#*_]/g, "").slice(0, 4000), visa].filter(Boolean).join(" ");
   return {

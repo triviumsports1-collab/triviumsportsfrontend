@@ -20,7 +20,20 @@ const nextConfig: NextConfig = {
   compress: true,
   allowedDevOrigins: ["127.0.0.1", "localhost"],
   async headers() {
-    return [{ source: "/:path*", headers: securityHeaders }];
+    return [
+      { source: "/:path*", headers: securityHeaders },
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "(?<previewHost>.*\\.vercel\\.app)" }],
+        headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow" }],
+      },
+    ];
+  },
+  async redirects() {
+    return [
+      { source: "/signin", destination: "/login", permanent: false },
+      { source: "/sign-in", destination: "/login", permanent: false },
+    ];
   },
   async rewrites() {
     const api = process.env.API_BASE_URL?.trim() || "http://127.0.0.1:8080";

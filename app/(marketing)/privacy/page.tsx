@@ -13,7 +13,7 @@ export default function PrivacyPage() {
         crumbs={[{ name: "Privacy", href: routes.privacy }]}
         kicker="Legal"
         title="Privacy Policy"
-        lede="Last updated 19 September 2026. This policy describes how Trivium Sports handles personal information on this website and in follow-up conversations — especially immigration and form data."
+        lede="Last updated 15 October 2026. This policy describes how Trivium Sports Inc. handles personal information submitted through this website."
       />
 
       <Section tone="elevated">
@@ -21,7 +21,7 @@ export default function PrivacyPage() {
           <article>
             <h2 className="text-2xl font-semibold tracking-tight text-ink">Who we are</h2>
             <p className="mt-3">
-              Trivium Sports operates this tennis-exclusive website. Questions: {site.email}.
+              Trivium Sports Inc. operates this website. Questions: {site.email}.
             </p>
           </article>
 
@@ -36,31 +36,12 @@ export default function PrivacyPage() {
           </article>
 
           <article>
-            <h2 className="text-2xl font-semibold tracking-tight text-ink">
-              Sensitive immigration and form data
-            </h2>
-            <p className="mt-3">
-              When a placement conversation requires supporting documents (such as an Employment
-              Authorization Document, passport biographical page, or government forms), we collect
-              them only through a restricted channel — not through this marketing site. Those files
-              are stored with encryption in transit and at rest, access is limited to personnel
-              with a work reason, and downloads are recorded. We do not use immigration documents
-              for advertising, and we do not sell them.
-            </p>
-            <p className="mt-3">
-              Status fields on an intake are treated as confidential. Club counterparts receive
-              only what is required to plan a lawful, on-court schedule — never document scans
-              by default.
-            </p>
-          </article>
-
-          <article>
             <h2 className="text-2xl font-semibold tracking-tight text-ink">How we use information</h2>
             <ul className="mt-3 list-disc space-y-2 pl-5">
               <li>To respond to intakes and messages</li>
               <li>To evaluate tennis fit with clubs, academies, or training plans</li>
-              <li>To coordinate work authorization with you and licensed advisors as needed</li>
-              <li>To meet legal, security, and record-keeping duties</li>
+              <li>When a conversation needs it, so we can work with immigration counsel</li>
+              <li>To meet legal duties that apply to the information we actually hold</li>
             </ul>
           </article>
 
@@ -78,9 +59,18 @@ export default function PrivacyPage() {
             <h2 className="text-2xl font-semibold tracking-tight text-ink">Retention</h2>
             <p className="mt-3">
               We keep inquiry records for as long as a conversation is active and for a reasonable
-              period afterward to resume it. Immigration documents are retained only while needed
-              for the placement or as required by law, then deleted or archived with restricted
-              access.
+              period afterward so we can resume it. Public forms on this site do not ask you to
+              upload passports or employment-authorization cards.
+            </p>
+          </article>
+
+          <article>
+            <h2 className="text-2xl font-semibold tracking-tight text-ink">Cookies</h2>
+            <p className="mt-3">
+              This public website does not use analytics or advertising cookies. We do not run a
+              third-party analytics tool on these pages. If you sign in to the staff application,
+              that application sets a session cookie so you can stay signed in. That cookie is not
+              used to advertise.
             </p>
           </article>
 
@@ -95,8 +85,8 @@ export default function PrivacyPage() {
           <article>
             <h2 className="text-2xl font-semibold tracking-tight text-ink">Not legal advice</h2>
             <p className="mt-3">
-              Nothing on this site is legal advice. Immigration decisions remain yours, with your
-              DSO and counsel.
+              Nothing on this site is legal advice. We work with immigration counsel. Immigration
+              decisions remain yours, with your DSO.
             </p>
           </article>
         </div>

@@ -64,35 +64,24 @@ export default function Home() {
       </section>
 
       <section className="border-t border-line bg-ink text-canvas-elevated">
-        <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:py-20">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-brand">
-              Coaching after college
-            </p>
-            <h2 className="mt-3 text-3xl font-semibold tracking-tight">
-              Your last dual match does not have to be the end of serious tennis.
-            </h2>
-            <p className="mt-4 text-base leading-7 text-white/75">
-              Collegiate tennis is a language U.S. clubs understand. We help eligible players
-              translate it into coaching — including an overview of OPT and STEM OPT.
-            </p>
-            <a
-              href={routes.afterCollege}
-              className="mt-8 inline-flex min-h-12 items-center justify-center rounded-full bg-brand px-7 text-base font-semibold text-ink hover:bg-brand-deep hover:text-canvas-elevated"
-            >
-              Read the OPT path
-            </a>
-          </div>
-          <blockquote className="rounded-3xl border border-white/10 bg-white/5 p-8">
-            <p className="text-lg font-medium leading-8">
-              “I knew how to compete in duals. I did not know how to talk to a U.S. club about
-              running a clinic block. Trivium translated the college game into a coaching
-              conversation.”
-            </p>
-            <footer className="mt-6 text-sm text-brand">
-              Former Division I player · now coaching on U.S. courts
-            </footer>
-          </blockquote>
+        <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6 lg:py-20">
+          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-brand">
+            Coaching after college
+          </p>
+          <h2 className="mt-3 text-3xl font-semibold tracking-tight">
+            Your last dual match does not have to be the end of serious tennis.
+          </h2>
+          <p className="mt-4 text-base leading-7 text-white/75">
+            Collegiate tennis is a language U.S. clubs understand. We explain Optional Practical
+            Training and STEM OPT for former college players, then help with the club introduction.
+            We work with immigration counsel.
+          </p>
+          <a
+            href={routes.afterCollege}
+            className="mt-8 inline-flex min-h-12 items-center justify-center rounded-full bg-brand px-7 text-base font-semibold text-ink hover:bg-brand-deep hover:text-canvas-elevated"
+          >
+            Read the OPT path
+          </a>
         </div>
       </section>
 

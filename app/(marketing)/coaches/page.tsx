@@ -72,7 +72,7 @@ export default function CoachesPage() {
       </Section>
 
       <Section tone="elevated">
-        <h2 className="text-3xl font-semibold tracking-tight">For Student-Athletes and Coaches</h2>
+        <h2 className="text-3xl font-semibold tracking-tight">Already in the United States</h2>
         <p className="mt-4 max-w-3xl text-base leading-7 text-ink-muted">{legacyHome.forCoaches}</p>
         <div className="mt-8">
           <FaqBlock items={legacyCoachFaqs} />

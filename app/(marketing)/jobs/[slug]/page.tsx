@@ -5,9 +5,15 @@ import { JsonLd } from "@/components/seo/json-ld";
 import { breadcrumbJsonLd, jobPostingJsonLd } from "@/lib/schema";
 import { getPublishedJob } from "@/lib/jobs/public";
 import { absoluteUrl } from "@/lib/seo";
-import { routes, site } from "@/lib/site";
+import { jobsBoardPublic, routes, site } from "@/lib/site";
 
 export const revalidate = 120;
+export const dynamicParams = true;
+
+export async function generateStaticParams() {
+  return [];
+}
+
 
 function locationLabel(city: string | null, state: string | null) {
   return [city, state].filter(Boolean).join(", ");
@@ -18,7 +24,7 @@ function visaCopy(stance: string) {
     return "U.S. work authorization required.";
   }
   if (stance === "OPEN_TO_DISCUSSION") {
-    return "The club is open to discussing work authorization with your licensed counsel. Trivium Sports is not a law firm.";
+    return "The club is open to discussing work authorization. We work with immigration counsel. Trivium Sports is not a law firm.";
   }
   return "Work authorization details are discussed case by case. Trivium Sports is not a law firm.";
 }
@@ -28,6 +34,9 @@ export async function generateMetadata({
 }: {
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
+  if (!jobsBoardPublic) {
+    return { title: "Roles", robots: { index: false, follow: false } };
+  }
   const { slug } = await params;
   const job = await getPublishedJob(slug);
   if (!job) {
@@ -62,6 +71,9 @@ export async function generateMetadata({
 }
 
 export default async function JobDetailPage({ params }: { params: Promise<{ slug: string }> }) {
+  if (!jobsBoardPublic) {
+    notFound();
+  }
   const { slug } = await params;
   const job = await getPublishedJob(slug);
   if (!job) {

@@ -5,9 +5,8 @@ const columns = [
   {
     title: "Coaches",
     links: [
-      { href: routes.coaches, label: "International coaches" },
-      { href: routes.afterCollege, label: "Coaching after college (OPT)" },
-      { href: routes.jobsBoard, label: "Open tennis roles" },
+      { href: routes.coaches, label: "Coaches already in the U.S." },
+      { href: routes.afterCollege, label: "Coaching after College" },
       { href: routes.jobs, label: "Tennis coaching jobs, USA" },
     ],
   },
@@ -26,6 +25,7 @@ const columns = [
       { href: routes.faq, label: "FAQ" },
       { href: routes.contact, label: "Contact" },
       { href: routes.privacy, label: "Privacy" },
+      { href: routes.login, label: "Staff sign in" },
     ],
   },
 ] as const;
@@ -40,8 +40,7 @@ export function SiteFooter() {
             {site.name}
           </p>
           <p className="mt-3 text-sm leading-6 text-ink-muted">
-            A tennis-exclusive agency connecting coaches and players with U.S. clubs and
-            academies.
+            Connecting tennis coaches and players with U.S. clubs and academies.
           </p>
           <p className="mt-4 text-sm text-ink-muted">
             <a className="hover:text-ink" href={`mailto:${site.email}`}>
@@ -70,7 +69,7 @@ export function SiteFooter() {
       </div>
       <div className="border-t border-line">
         <div className="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-6 text-xs text-ink-muted sm:flex-row sm:justify-between sm:px-6">
-          <p>© 2026 Trivium Sports. Tennis only.</p>
+          <p>© 2026 Trivium Sports Inc.</p>
           <p>
             <a className="hover:text-ink" href={site.instagram}>
               Instagram

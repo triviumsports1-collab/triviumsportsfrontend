@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { listAllPublishedJobSlugs } from "@/lib/jobs/public";
 import { pages } from "@/lib/seo";
-import { site } from "@/lib/site";
+import { jobsBoardPublic, site } from "@/lib/site";
 
 const priorityByPath: Record<string, number> = {
   "/": 1,
@@ -21,7 +21,9 @@ const priorityByPath: Record<string, number> = {
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const lastModified = new Date("2026-09-22");
-  const marketing = Object.values(pages).map((page) => ({
+  const marketing = Object.values(pages)
+    .filter((page) => jobsBoardPublic || page.path !== "/jobs")
+    .map((page) => ({
     url: page.path === "/" ? site.url : `${site.url}${page.path}`,
     lastModified,
     changeFrequency:
@@ -29,7 +31,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: priorityByPath[page.path] ?? 0.5,
   })) as MetadataRoute.Sitemap;
 
-  const jobs = await listAllPublishedJobSlugs();
+  const jobs = jobsBoardPublic ? await listAllPublishedJobSlugs() : [];
   const jobEntries: MetadataRoute.Sitemap = jobs.map((job) => ({
     url: `${site.url}/jobs/${job.slug}`,
     lastModified: job.publishedAt ? new Date(job.publishedAt) : lastModified,

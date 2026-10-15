@@ -17,14 +17,20 @@ export function ContactForm() {
       setError("Please include a valid email and a short message.");
       return;
     }
+    const name = String(data.get("name") ?? "").trim();
+    const audience = String(data.get("audience") ?? "").trim();
+    const subject = "Message from the Trivium Sports website";
+    const body = [`Name: ${name || "(not given)"}`, `I am a: ${audience || "(not selected)"}`, "", message].join("\n");
     setError(null);
     setSubmitted(true);
+    window.location.href = `mailto:${site.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   }
 
   if (submitted) {
     return (
       <p className="rounded-3xl border border-line bg-canvas p-6 text-base leading-7 text-ink-muted">
-        Message received. We will reply from {site.email}.
+        Your email app should open a message to {site.email}. Send it to reach the desk. If it does
+        not open, write to that address directly.
       </p>
     );
   }

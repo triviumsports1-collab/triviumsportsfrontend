@@ -58,7 +58,8 @@ export default function ContactPage() {
           <div>
             <h2 className="text-2xl font-semibold tracking-tight">Message</h2>
             <p className="mt-2 mb-6 text-sm text-ink-muted">
-              Labels are visible. We will not ask you to attach passports or EADs on this form.
+              Send a note about tennis coaching, a player stay, or a club search. We will not ask
+              you to attach passports or EADs on this form.
             </p>
             <ContactForm />
           </div>

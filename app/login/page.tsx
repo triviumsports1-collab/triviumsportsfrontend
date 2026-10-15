@@ -3,6 +3,8 @@ import { routes } from "@/lib/site";
 import type { Metadata } from "next";
 import { Suspense } from "react";
 
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
   title: "Sign in",
   robots: { index: false, follow: false },
@@ -17,7 +19,7 @@ export default function LoginPage() {
       <h1 className="mt-6 text-3xl font-semibold tracking-tight text-ink">Sign in</h1>
       <p className="mt-2 text-sm text-ink-muted">Use your workspace email. Public tennis pages stay separate.</p>
       <div className="mt-8">
-        <Suspense>
+        <Suspense fallback={<p className="text-sm text-ink-muted">Loading sign-in…</p>}>
           <LoginForm />
         </Suspense>
       </div>

@@ -8,15 +8,15 @@ export const faqGroups = [
       },
       {
         q: "Is this a job board I can apply to by clicking a listing?",
-        a: "No. We describe role types and ask you to tell us about you. Introductions are made with tennis directors, not through a public feed of ads.",
+        a: "No. Open roles are not listed publicly right now. Tell us about your tennis background and we introduce you to directors. This is not a job board.",
       },
       {
         q: "Will you tell me if I qualify for OPT or STEM OPT?",
-        a: "No. That determination belongs with your DSO and licensed counsel. We can discuss tennis work inside an authorization you already have or are obtaining with proper advisors.",
+        a: "No. We work with immigration counsel. Your DSO decides whether you qualify for OPT or STEM OPT. We can discuss tennis work inside an authorization you already have.",
       },
       {
-        q: "Where do Trivium coaches work?",
-        a: "Trivium coaches work at U.S. clubs and academies. You are on their courts, in their programs, to their tennis standard.",
+        q: "Where do coaches placed by Trivium work?",
+        a: "Coaches placed by Trivium work at U.S. clubs and academies. You are on their courts, in their programs, to their tennis standard.",
       },
     ],
   },
@@ -41,12 +41,12 @@ export const faqGroups = [
     title: "Clubs",
     items: [
       {
-        q: "Who directs the tennis if a Trivium coach is on our courts?",
-        a: "You do. Trivium coaches work at clubs. Directors keep the program, the culture, and the on-court standard.",
+        q: "Who directs the tennis if a coach placed by Trivium is on our courts?",
+        a: "You do. Coaches placed by Trivium work at clubs. Directors keep the program, the culture, and the on-court standard.",
       },
       {
-        q: "Do you coordinate work authorization?",
-        a: "Yes. That is part of a professional placement — handled as a structured process, not a hallway conversation.",
+        q: "What if a placement raises an immigration question?",
+        a: "We work with immigration counsel. Directors keep the tennis program, the culture, and the on-court standard.",
       },
       {
         q: "Can we post a public job on your site?",
@@ -67,7 +67,7 @@ export const optFaqs = [
   },
   {
     q: "Does Trivium Sports provide immigration legal advice?",
-    a: "No. Trivium Sports is not a law firm. Your Designated School Official and licensed counsel are the authorities on your case. We help with the tennis transition and club introductions.",
+    a: "No. Trivium Sports is not a law firm and does not provide immigration advice. We work with immigration counsel. Your Designated School Official decides OPT and STEM OPT eligibility. We help with the tennis transition and club introductions.",
   },
 ] as const;
 
@@ -98,7 +98,7 @@ export const howItWorksAudiences = [
       "Complete the coach intake (OPT / STEM OPT, résumé, where you can live).",
       "We review tennis level, teaching range, and timing.",
       "We introduce you to clubs whose calendars match.",
-      "You step onto court as a Trivium coach working at that club.",
+      "You step onto court as a coach placed by Trivium at that club.",
     ],
   },
   {
@@ -117,8 +117,8 @@ export const howItWorksAudiences = [
     steps: [
       "Share the courts you need covered and the tennis standard you expect.",
       "We source coaches whose habits match your club.",
-      "We coordinate work authorization so the arrangement is structured.",
-      "Trivium coaches work at your club; you direct the tennis.",
+      "When a placement raises an immigration question, we work with immigration counsel.",
+      "Coaches placed by Trivium work at your club; you direct the tennis.",
     ],
   },
 ] as const;

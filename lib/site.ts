@@ -2,8 +2,8 @@ export const site = {
   name: "Trivium Sports",
   url: "https://triviumsports.com",
   email: "info@triviumsports.com",
-  whatsappE164: process.env.NEXT_PUBLIC_WHATSAPP_E164 ?? "13055550148",
-  whatsappDisplay: process.env.NEXT_PUBLIC_WHATSAPP_DISPLAY ?? "+1 602-341-3361",
+  whatsappE164: process.env.NEXT_PUBLIC_WHATSAPP_E164 ?? "16232550858",
+  whatsappDisplay: process.env.NEXT_PUBLIC_WHATSAPP_DISPLAY ?? "+1 623-255-0858",
   instagram: "https://www.instagram.com/triviumsports",
   linkedin: "https://www.linkedin.com/company/triviumsports",
 } as const;
@@ -32,20 +32,21 @@ export const routes = {
   jobsBoard: "/jobs",
 } as const;
 
+/** Public /jobs stays unpublished until roles are posted. Patrick switches this on. */
+export const jobsBoardPublic = false;
+
 export const primaryNav = [
   { href: routes.home, label: "Home" },
-  { href: routes.jobsBoard, label: "Jobs" },
   { href: routes.coaches, label: "For Coaches" },
   { href: routes.clubs, label: "For Clubs" },
   { href: routes.players, label: "For Players" },
-  { href: routes.afterCollege, label: "Visa Pathways" },
+  { href: routes.afterCollege, label: "Coaching after College" },
   { href: routes.about, label: "About" },
 ] as const;
 
 export const mobileNav = [
-  { href: routes.jobsBoard, label: "Jobs" },
   { href: routes.coaches, label: "Coaches" },
-  { href: routes.afterCollege, label: "Coaching after college (OPT)" },
+  { href: routes.afterCollege, label: "Coaching after College" },
   { href: routes.jobs, label: "Tennis coaching jobs, USA" },
   { href: routes.players, label: "Players" },
   { href: routes.clubs, label: "Clubs & academies" },

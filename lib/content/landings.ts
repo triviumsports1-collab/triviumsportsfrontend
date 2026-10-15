@@ -1,12 +1,11 @@
 export const trustPills = [
-  "Tennis only",
   "U.S. clubs & academies",
   "Adults 18+",
   "Not a law firm",
 ] as const;
 
 export const visaDisclaimer =
-  "Trivium Sports is not a law firm and does not provide immigration advice. Status questions belong with your Designated School Official and licensed counsel. We coordinate tennis work with clubs so the on-court chapter is structured and transparent.";
+  "Trivium Sports is not a law firm and does not provide immigration advice. We work with immigration counsel. Your Designated School Official decides student status. We coordinate tennis work with clubs so the on-court chapter is structured and transparent.";
 
 export type PillarIcon = "architecture" | "professionals" | "compliance" | "pathway";
 
@@ -37,7 +36,7 @@ export const coachLanding = {
     {
       icon: "compliance",
       title: "Global Talent & Compliance",
-      body: "OPT and STEM OPT timing treated as a professional process. We coordinate work authorization with clubs and the advisors on your case — we do not file petitions.",
+      body: "OPT and STEM OPT timing treated as a professional process. We work with immigration counsel. We do not decide eligibility, and we do not file petitions.",
     },
     {
       icon: "architecture",
@@ -76,7 +75,7 @@ export const coachLanding = {
     {
       n: "03",
       t: "On-court chapter",
-      d: "Trivium coaches work at clubs. We stay involved so the placement is professional, not informal.",
+      d: "Coaches placed by Trivium work at clubs. We stay involved so the placement is professional, not informal.",
     },
   ],
   proof: [
@@ -101,8 +100,8 @@ export const coachLanding = {
 
 export const clubLanding = {
   kicker: "For clubs & academies",
-  title: "Trivium coaches work at clubs. You keep the tennis standard.",
-  lede: "We source international and post-collegiate tennis coaches for U.S. clubs and academies, then coordinate work authorization so directors can put professionals on court with a clear, compliant structure.",
+  title: "Coaches placed by Trivium work at clubs. You keep the tennis standard.",
+  lede: "We source international and post-collegiate tennis coaches for U.S. clubs and academies so directors can put professionals on court. When a placement raises an immigration question, we work with immigration counsel.",
   pillarHeading: "What U.S. clubs actually retain — and what we add",
   pillarLede:
     "Four professional pillars. Your tennis standard stays in-house. Trivium supplies elite professionals and a structured path from introduction to on-court presence.",
@@ -110,7 +109,7 @@ export const clubLanding = {
     {
       icon: "architecture",
       title: "Leadership & Program Architecture",
-      body: "Elite curriculum design, high-performance culture, and multi-location calendar synchronization stay with your directors. Trivium coaches work inside that architecture — they do not replace it.",
+      body: "Elite curriculum design, high-performance culture, and multi-location calendar synchronization stay with your directors. Coaches placed by Trivium work inside that architecture — they do not replace it.",
     },
     {
       icon: "professionals",
@@ -139,7 +138,7 @@ export const clubLanding = {
     },
     {
       title: "Program architecture stays yours",
-      body: "You set curriculum, culture, and calendar. Trivium coaches work at your club, inside that standard.",
+      body: "You set curriculum, culture, and calendar. Coaches placed by Trivium work at your club, inside that standard.",
     },
   ],
   split: {
@@ -149,7 +148,7 @@ export const clubLanding = {
       "Your brand on court — members meet a coach who looks like your club.",
     ],
     we: [
-      "A tennis-only search for coaches already in the U.S. or finishing college tennis.",
+      "A search for tennis coaches already in the U.S. or finishing college tennis.",
       "Structured work-authorization coordination with the right advisors.",
       "A professional point of contact after the coach is on your schedule.",
     ],
@@ -159,7 +158,7 @@ export const clubLanding = {
 export const playerLanding = {
   kicker: "For players",
   title: "U.S. tennis with a plan — not a tourist week.",
-  lede: "For international players who want serious training in the United States: the right academy environment, a competition calendar that makes sense, and a professional point of contact.",
+  lede: "Player management for international adults who want serious tennis in the United States: academy placement, a training block, and a competition calendar, with one professional point of contact.",
   pillarHeading: "A high-performance stay, not a tourist week",
   pillarLede:
     "Training, competition, and living logistics planned as one pathway — with elite professionals and a club that already knows how to host international adults.",
@@ -217,16 +216,26 @@ export const playerLanding = {
 
 export const afterCollegeLanding = {
   kicker: "Coaching after college",
-  title: "OPT and STEM OPT, explained for tennis players.",
-  lede: "Eligibility ends. The dual-match language you spent four years learning does not. Trivium helps former college players understand how Optional Practical Training can support a coaching chapter at U.S. clubs — and then makes the introduction.",
+  title: "OPT and STEM OPT for former college tennis players.",
+  lede: "Your DSO decides whether Optional Practical Training or STEM OPT fits your degree. Trivium explains both in tennis terms, then introduces you to U.S. clubs if that window is already yours. We work with immigration counsel. We do not tell you whether you qualify.",
+  explain: [
+    {
+      title: "Optional Practical Training",
+      body: "OPT is work authorization available to many F-1 students after a qualifying U.S. degree, usually for up to 12 months, in a field related to that degree. Some former college tennis players use it to coach. Coaching does not automatically qualify — it depends on the degree field and your DSO’s guidance. It is not a tennis visa, and it is not guaranteed.",
+    },
+    {
+      title: "STEM OPT",
+      body: "STEM OPT is an extension available only when the degree is on the official STEM list and the extra conditions are met. It is not available to every tennis player who competed in college. If the degree is not on that list, the longer window does not apply. We do not decide this. We work with immigration counsel, and your DSO remains the authority.",
+    },
+  ],
   pillarHeading: "From the last dual match to a coaching chapter",
   pillarLede:
-    "College tennis is a language U.S. clubs understand. We help you translate it into elite professional work — with educational clarity on OPT and STEM OPT, never legal advice.",
+    "College tennis is a language U.S. clubs understand. We help you translate it into club coaching, with a plain-language overview of OPT and STEM OPT. We work with immigration counsel.",
   pillars: [
     {
       icon: "compliance",
       title: "Global Talent & Compliance",
-      body: "Optional Practical Training and STEM OPT explained in tennis terms. Your DSO and licensed counsel remain the authorities; we coordinate the club introduction around the window you actually have.",
+      body: "Optional Practical Training and STEM OPT explained in tennis terms. Your DSO decides eligibility. We work with immigration counsel and coordinate the club introduction around the window you actually have.",
     },
     {
       icon: "professionals",
@@ -263,15 +272,15 @@ export const afterCollegeLanding = {
 export const aboutLanding = {
   kicker: "About Trivium Sports",
   title: "Founded on court. Measured by how we place people.",
-  lede: "Trivium Sports is a tennis-exclusive agency. The founding team comes from collegiate competition, club coaching, and the unglamorous work of placing people inside U.S. tennis buildings the right way.",
+  lede: "Trivium Sports introduces tennis people to U.S. clubs and academies. The founding team comes from collegiate competition, club coaching, and the unglamorous work of placing people inside U.S. tennis buildings the right way.",
   pillarHeading: "How we measure the work",
   pillarLede:
-    "Tennis-exclusive. Collegiate DNA. Club-ready professionals. Work authorization treated as process, not slogans.",
+    "Collegiate tennis. Club-ready professionals. Work authorization treated as process, not slogans.",
   highlightPillars: [
     {
       icon: "pathway",
       title: "High-Performance Pathway",
-      body: "We exist for structured tennis: clinics, elite privates, and junior-to-pro environments inside U.S. clubs and academies — no other sport.",
+      body: "We exist for structured tennis: clinics, elite privates, and junior-to-pro environments inside U.S. clubs and academies.",
     },
     {
       icon: "professionals",
@@ -304,20 +313,20 @@ export const aboutLanding = {
     },
   ],
   standards: [
-    "We do not provide legal advice. Immigration outcomes belong with DSOs and licensed counsel.",
-    "Sensitive immigration and form data are collected only as needed, stored with access control, and never used as marketing content.",
+    "We do not provide legal advice. We work with immigration counsel. Eligibility stays with your DSO.",
+    "Public forms do not ask for passport or employment-authorization uploads.",
     "Work authorization is coordinated as a professional process with clubs — not as an informal side conversation.",
-    "Trivium coaches work at clubs under a clear arrangement. We do not improvise status on the back of a lesson pad.",
+    "Coaches placed by Trivium work at clubs under a clear arrangement. We do not improvise status on the back of a lesson pad.",
   ],
 } as const;
 
 export const jobsLanding = {
   kicker: "Tennis coaching jobs, USA",
   title: "The roles U.S. clubs actually need filled.",
-  lede: "Role types first — club professional, high-performance, junior development — then a considered introduction. Open listings, when published, appear in HTML on this page and on the live board.",
+  lede: "Role types first — club professional, high-performance, junior development — then a considered introduction. This is not a public job board.",
   pillarHeading: "The tennis work U.S. clubs need filled",
   pillarLede:
-    "Role types first — then a considered introduction. Every listing, when published, still maps to these four professional pillars.",
+    "Role types first, then a considered introduction to a U.S. tennis club.",
   pillars: [
     {
       icon: "professionals",
