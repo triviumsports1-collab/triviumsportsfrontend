@@ -1,5 +1,6 @@
 import {
   CtaBand,
+  FramedPhoto,
   PageHero,
   PrimaryLink,
   Section,
@@ -20,12 +21,19 @@ export default function HowItWorksPage() {
         crumbs={[{ name: "How it works", href: routes.howItWorks }]}
         kicker="How it works"
         title="Three audiences. One tennis standard."
-        lede="The process is simple on purpose. We do not run a public job board. Each path starts with a conversation, then a human review."
+        lede="The process is simple on purpose. We do not run a public job board. Each path starts with a conversation, then a person reviews it."
+        image="/images/jobs-body.jpg"
+        imageAlt="A coach and player beside the net"
         actions={<PrimaryLink href={routes.getStarted}>Get started</PrimaryLink>}
       />
 
       <Section tone="elevated">
-        <div className="grid gap-10 lg:grid-cols-3">
+        <div className="grid items-start gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:gap-14">
+          <FramedPhoto
+            src="/images/about-court.jpg"
+            alt="Wide view of a tennis club’s outdoor courts"
+          />
+          <div className="grid gap-10">
           {howItWorksAudiences.map((audience) => (
             <div key={audience.id}>
               <h2 className="text-2xl font-semibold tracking-tight">{audience.title}</h2>
@@ -41,6 +49,7 @@ export default function HowItWorksPage() {
               </ol>
             </div>
           ))}
+          </div>
         </div>
       </Section>
 

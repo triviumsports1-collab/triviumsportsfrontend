@@ -24,7 +24,7 @@ const paths: { id: AudiencePath; title: string; lede: string }[] = [
   {
     id: "player",
     title: "Player",
-    lede: "Academy placement, training blocks, and competition planning. Adults 18 and older.",
+    lede: "Academy placement, training blocks, and competition planning for international professional athletes.",
   },
   {
     id: "club",
@@ -109,11 +109,11 @@ export function IntakeForm({
   if (submitted) {
     return (
       <div id={id} className="rounded-3xl border border-line bg-canvas-elevated p-8 text-ink">
-        <p className="text-sm font-semibold uppercase tracking-[0.18em] text-brand-deep">Received</p>
-        <h2 className="mt-3 text-2xl font-semibold tracking-tight">Thank you.</h2>
+        <p className="text-sm font-semibold uppercase tracking-[0.18em] text-brand-deep">Confirmed</p>
+        <h2 className="mt-3 text-2xl font-semibold tracking-tight">Your intake is confirmed.</h2>
         <p className="mt-3 text-base leading-7 text-ink-muted">
-          Our tennis team will review your intake and follow up at the email you provided. For a
-          faster reply, you may also write {site.email}.
+          We have your {path} intake. Our tennis team will review it and follow up at the email you
+          provided. You can also email {site.email}.
         </p>
       </div>
     );

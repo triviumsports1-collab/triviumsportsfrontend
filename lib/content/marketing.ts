@@ -12,7 +12,7 @@ export const faqGroups = [
       },
       {
         q: "Will you tell me if I qualify for OPT or STEM OPT?",
-        a: "No. We work with immigration counsel. Your DSO decides whether you qualify for OPT or STEM OPT. We can discuss tennis work inside an authorization you already have.",
+        a: "Yes. Together with immigration counsel, we review whether an OPT or STEM OPT path at a tennis club fits your situation. Your school’s DSO makes the final decision.",
       },
       {
         q: "Where do coaches placed by Trivium work?",
@@ -25,15 +25,15 @@ export const faqGroups = [
     items: [
       {
         q: "Can you place me at a U.S. academy?",
-        a: "We help with academy placement, training blocks, and competition planning for international players. It starts with a player intake so we understand level and dates.",
+        a: "We help international professional athletes with academy placement, training blocks, and competition planning. It starts with a player intake so we understand level and dates.",
       },
       {
         q: "Do you work with juniors?",
-        a: "This website’s self-serve intakes are for adults 18 and older. Families should use the contact form.",
+        a: "This site is for international professional athletes. Families of junior players should contact us.",
       },
       {
         q: "Do you guarantee ranking points or college recruiting outcomes?",
-        a: "No. We plan training and competition honestly. Tennis results remain on the court.",
+        a: "No. We plan training and competition for professional athletes honestly. Tennis results remain on the court.",
       },
     ],
   },
@@ -59,15 +59,15 @@ export const faqGroups = [
 export const optFaqs = [
   {
     q: "What is OPT for a college tennis player?",
-    a: "Optional Practical Training is a form of work authorization available to many F-1 students after a qualifying U.S. degree. Some former college tennis players use an OPT window to coach at U.S. clubs if the role and their DSO’s guidance align. It is not a tennis visa and it is not guaranteed.",
+    a: "Optional Practical Training is a form of work authorization available to many F-1 students after a qualifying U.S. degree. Some former college tennis players use an OPT window to coach at U.S. clubs if the role and their DSO’s guidance align. It is not guaranteed.",
   },
   {
     q: "What is STEM OPT in this context?",
     a: "STEM OPT is an extension available only for specific degree categories on the official STEM list, with additional conditions. It is not available to every tennis player who competed in college.",
   },
   {
-    q: "Does Trivium Sports provide immigration legal advice?",
-    a: "No. Trivium Sports is not a law firm and does not provide immigration advice. We work with immigration counsel. Your Designated School Official decides OPT and STEM OPT eligibility. We help with the tennis transition and club introductions.",
+    q: "Does Trivium Sports help with immigration?",
+    a: "Yes. We guide you through the process, and every legal question is handled together with the immigration counsel we work with.",
   },
 ] as const;
 

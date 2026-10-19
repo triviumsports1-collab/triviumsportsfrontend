@@ -20,7 +20,7 @@ const priorityByPath: Record<string, number> = {
 };
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const lastModified = new Date("2026-09-22");
+  const lastModified = new Date("2026-10-19");
   const marketing = Object.values(pages)
     .filter((page) => jobsBoardPublic || page.path !== "/jobs")
     .map((page) => ({

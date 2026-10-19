@@ -13,7 +13,7 @@ export const legacyHome = {
   mission: {
     h2: "More Than a Match. A Mission.",
     p1: "We operate with ethics and a clear process.",
-    p2: "Every placement follows documented standards and verified tennis partners. We work with immigration counsel. We do not decide whether someone qualifies to work.",
+    p2: "Every placement follows documented standards and verified tennis partners. We check whether an OPT or STEM OPT path at a tennis club could work, together with immigration counsel.",
     p3: "People first, rules followed, outcomes measured.",
   },
   standards: [
@@ -23,7 +23,7 @@ export const legacyHome = {
     },
     {
       title: "Counsel on timing",
-      body: "We work with immigration counsel on timing. We do not decide eligibility, and we do not file petitions.",
+      body: "We work with immigration counsel on timing.",
     },
   ],
   whoWeServe:
@@ -57,7 +57,7 @@ export const legacyCoaches = {
   expectHeading: "What you can expect from us",
   expectP1:
     "We do not match you with a club and disappear. If you are already in the United States, your OPT or STEM OPT timeline feels tight, club applications go unanswered, or you want a full tennis day instead of leftover hours, we can help you have a serious conversation with the right director.",
-  expectP2: "We bring structure and real tennis opportunities so you can move forward. We work with immigration counsel. We do not decide whether you qualify.",
+  expectP2: "We bring structure and real tennis opportunities so you can move forward. We check whether an OPT or STEM OPT path at a tennis club could work for you, together with immigration counsel.",
   pillars: [
     {
       icon: "professionals",
@@ -67,7 +67,7 @@ export const legacyCoaches = {
     {
       icon: "compliance",
       title: "OPT and STEM OPT, in tennis terms",
-      body: "We talk through the authorization window you already have or are arranging with your DSO. We work with immigration counsel. We do not tell you whether you qualify, and we do not file petitions.",
+      body: "We talk through the authorization window you already have or are arranging with your DSO. We check whether an OPT or STEM OPT path at a tennis club could work for you, together with immigration counsel.",
     },
     {
       icon: "pathway",
@@ -84,8 +84,8 @@ export const legacyCoaches = {
   ctaLede: "Tennis introductions, a clear timeline, and a network committed to your development on court.",
   lookingHeading: "Who we’re looking for",
   lookingP1:
-    "We partner with tennis coaches already in the United States who treat teaching as a craft. Ideal candidates are eligible to work, often on OPT or STEM OPT, serious about player development, and ready for early courts and weekend clinics.",
-  lookingP2: "If you are still abroad, write to us and we will tell you honestly whether a conversation makes sense. If this sounds like you, we would like to hear your tennis story.",
+    "We partner with tennis coaches already in the United States who treat teaching as a craft. Ideal candidates are authorized to work in the U.S., including coaches on OPT or STEM OPT, serious about player development, and ready for early courts and weekend clinics.",
+  lookingP2: "If you are still abroad, email us and we will tell you honestly whether a conversation makes sense. If this sounds like you, we would like to hear your tennis story.",
 } as const;
 
 export const legacyClubs = {
@@ -98,7 +98,7 @@ export const legacyClubs = {
   expectP2:
     "You receive structured interview notes and reference summaries, regular updates through a single point of contact, and shortlists you can evaluate with confidence.",
   expectP3:
-    "After the offer we remain involved to support onboarding, communication, and long term success.",
+    "Once the coach starts, we remain involved to support onboarding, communication, and long-term success.",
   pillars: [
     {
       icon: "professionals",
@@ -214,6 +214,7 @@ export const legacyAbout = {
   founders: [
     {
       name: "Patrick Szymczak",
+      photo: "/images/team/patrick-sylvester.webp",
       role: "Employer Partnerships and Placement",
       body: "Former international student-athlete who came to the United States on a tennis scholarship. After earning both bachelor’s and master’s degrees, he coached at the Division I level and later founded an academy serving athletes across the Phoenix Valley. Having navigated immigration and career-building firsthand, he brings practical insight into how international coaches build careers in the United States.",
     },
@@ -221,12 +222,14 @@ export const legacyAbout = {
   advisoryHeading: "Advisory Board",
   advisors: [
     {
-      name: "Juan Carlos Baguena",
+      name: "Juan Carlos Bàguena",
+      photo: "/images/team/juan-carlos-baguena.webp",
       role: "Advisor, Global Talent Network and Scouting",
       body: "Tennis coach, former ATP player, and program director with 30 years in high-performance tennis. He has coached top-50 ATP and WTA players, led programs at international academies in Spain, and founded Barcelona Tennis Academy. He also created Top Tennis Careers, a placement and consulting platform for coaches worldwide.",
     },
     {
       name: "Miguel Coelho",
+      photo: "/images/team/miguel-crespo.webp",
       role: "Advisor, Learning and Coaching Development",
       body: "Tennis coach, educator, and program director with 25 years of experience in Portugal, Spain, and the United States, working with athletes from beginners to ATP, WTA, and ITF professionals. A strong advocate for coach development, he contributes to coach education with the USTA. He holds a master’s in High-Performance Tennis and a PhD from the University of Arizona.",
     },
@@ -261,7 +264,7 @@ export const legacyHowItWorks = {
   clubSteps: [
     {
       t: "1. Submit a role",
-      d: "Define scope, schedule, compensation, culture, and success markers.",
+      d: "Define scope, schedule, budget, culture, and success markers.",
     },
     {
       t: "2. Curated shortlist",
@@ -304,7 +307,7 @@ export const legacyCoachFaqs = [
   },
   {
     q: "Can I work in the U.S. after I graduate?",
-    a: "Many international students can apply for Optional Practical Training (OPT) after graduation. Whether coaching fits depends on your degree field and your DSO. It is not automatic, and it is not a tennis visa.",
+    a: "Many international students can apply for Optional Practical Training (OPT) after graduation. Whether coaching fits depends on your degree field and your DSO. It is not automatic.",
   },
   {
     q: "What happens after my OPT ends?",
@@ -323,7 +326,7 @@ export const legacyCoachFaqs = [
 export const legacyOptFaqs = [
   {
     q: "What is OPT and how does it work?",
-    a: "OPT stands for Optional Practical Training. It is work authorization available to many F-1 students after a qualifying U.S. degree, in a field related to their studies. Coaching qualifies only when the degree field and your DSO’s guidance align. We work with immigration counsel and do not decide eligibility.",
+    a: "OPT stands for Optional Practical Training. It is work authorization available to many F-1 students after a qualifying U.S. degree, in a field related to their studies. Coaching qualifies only when the degree field and your DSO’s guidance align. We check whether an OPT or STEM OPT path at a tennis club could work for you, together with immigration counsel.",
   },
   {
     q: "Do you provide legal services directly?",
@@ -341,8 +344,8 @@ export const legacyClubFaqs = [
     a: "We recommend placements of at least 6 to 12 months to ensure continuity and impact, but we can discuss seasonal and short-term options on a case-by-case basis.",
   },
   {
-    q: "Do you offer support after the hire?",
-    a: "Yes. We stay in contact with both coach and employer after placement to help with integration, communication, and retention. We are here to make sure it works for both sides.",
+    q: "Do you offer support after placement?",
+    a: "Yes. We stay in contact with both the coach and the club after placement to help with integration, communication, and retention. We are here to make sure it works for both sides.",
   },
   {
     q: "How much does it cost to work with Trivium?",

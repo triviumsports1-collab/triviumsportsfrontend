@@ -147,7 +147,7 @@ export function HomeHero() {
             <p className="mt-3 flex-1 text-sm leading-6 text-ink-muted">{card.body}</p>
             <a
               href={card.href}
-              className="mt-5 inline-flex items-center justify-center gap-1.5 text-sm font-semibold text-brand-deep hover:text-ink"
+              className="mt-5 inline-flex min-h-11 items-center justify-center gap-1.5 text-sm font-semibold text-brand-deep hover:text-ink"
             >
               {card.link}
               <ArrowIcon />

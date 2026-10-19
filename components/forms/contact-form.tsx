@@ -29,8 +29,8 @@ export function ContactForm() {
   if (submitted) {
     return (
       <p className="rounded-3xl border border-line bg-canvas p-6 text-base leading-7 text-ink-muted">
-        Your email app should open a message to {site.email}. Send it to reach the desk. If it does
-        not open, write to that address directly.
+        Your message is ready. Your email app should open a draft to {site.email}. Send that draft
+        to reach us. If it does not open, email that address directly.
       </p>
     );
   }

@@ -39,7 +39,7 @@ export const pages: Record<MarketingRoute, SeoPage> = {
     path: routes.afterCollege,
     title: "Coaching after College Tennis | OPT and STEM OPT",
     description:
-      "Optional Practical Training and STEM OPT, explained for former college tennis players who want to coach at U.S. clubs. We work with immigration counsel and do not decide eligibility.",
+      "Optional Practical Training and STEM OPT, explained for former college tennis players who want to coach at U.S. clubs. We check whether an OPT or STEM OPT path could work, together with immigration counsel.",
     keywords: [
       "coaching after college tennis",
       "OPT tennis coaching",
@@ -75,7 +75,7 @@ export const pages: Record<MarketingRoute, SeoPage> = {
     path: routes.players,
     title: "Tennis Player Management USA | Academy Placement",
     description:
-      "Player management for international adults: U.S. academy placement, training blocks, and competition planning. Not college recruiting.",
+      "Player management for international professional athletes: U.S. academy placement, training blocks, and competition planning. Not college recruiting.",
     keywords: [
       "international tennis academy USA",
       "tennis training United States",

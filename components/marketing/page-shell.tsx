@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import Image from "next/image";
 import { routes } from "@/lib/site";
 import { Breadcrumbs, type Crumb } from "@/components/seo/breadcrumbs";
 import { CourtBackdrop } from "@/components/marketing/tennis-mark";
@@ -10,43 +11,115 @@ export function PageHero({
   lede,
   actions,
   crumbs,
+  image,
+  imageAlt,
 }: {
   kicker: string;
   title: string;
   lede: string;
   actions?: ReactNode;
   crumbs?: Crumb[];
+  image?: string;
+  imageAlt?: string;
 }) {
+  const copy = (
+    <>
+      {crumbs?.length ? (
+        <div className="[&_a]:text-brand [&_a:hover]:text-canvas-elevated [&_li]:text-white/70 [&_nav]:text-white/70 [&_span]:text-canvas-elevated">
+          <Breadcrumbs items={crumbs} />
+        </div>
+      ) : null}
+      <p className="text-sm font-semibold uppercase tracking-[0.18em] text-brand">{kicker}</p>
+      <h1 className="mt-4 max-w-3xl text-4xl font-semibold tracking-tight text-canvas-elevated sm:text-5xl sm:leading-[1.08]">
+        {title}
+      </h1>
+      <p className="mt-5 max-w-2xl text-lg leading-8 text-white/75">{lede}</p>
+      {actions ? <div className="mt-8 flex flex-col gap-3 sm:flex-row">{actions}</div> : null}
+      <ul className="mt-10 flex max-w-3xl flex-wrap gap-2">
+        {trustPills.map((pill) => (
+          <li
+            key={pill}
+            className="rounded-full border border-white/15 bg-white/5 px-3 py-1.5 text-xs font-semibold uppercase tracking-wider text-white/85"
+          >
+            {pill}
+          </li>
+        ))}
+      </ul>
+    </>
+  );
+
+  if (image) {
+    return (
+      <section className="border-b border-line bg-ink text-canvas-elevated">
+        <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-12 sm:px-6 lg:grid-cols-[1.12fr_0.88fr] lg:gap-14 lg:py-16">
+          <div>{copy}</div>
+          <FramedPhoto src={image} alt={imageAlt ?? ""} priority tone="dark" />
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section className="relative overflow-hidden border-b border-line bg-ink text-canvas-elevated">
       <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-[46%] opacity-90 lg:block" aria-hidden="true">
         <CourtBackdrop />
         <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/70 to-transparent" />
       </div>
-      <div className="relative mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:py-20">
-        {crumbs?.length ? (
-          <div className="[&_a]:text-brand [&_a:hover]:text-canvas-elevated [&_li]:text-white/70 [&_nav]:text-white/70 [&_span]:text-canvas-elevated">
-            <Breadcrumbs items={crumbs} />
-          </div>
-        ) : null}
-        <p className="text-sm font-semibold uppercase tracking-[0.18em] text-brand">{kicker}</p>
-        <h1 className="mt-4 max-w-3xl text-4xl font-semibold tracking-tight text-canvas-elevated sm:text-5xl sm:leading-[1.08] lg:text-[3.25rem]">
-          {title}
-        </h1>
-        <p className="mt-5 max-w-2xl text-lg leading-8 text-white/75">{lede}</p>
-        {actions ? <div className="mt-8 flex flex-col gap-3 sm:flex-row">{actions}</div> : null}
-        <ul className="mt-10 flex max-w-3xl flex-wrap gap-2">
-          {trustPills.map((pill) => (
-            <li
-              key={pill}
-              className="rounded-full border border-white/15 bg-white/5 px-3 py-1.5 text-xs font-semibold uppercase tracking-wider text-white/85"
-            >
-              {pill}
-            </li>
-          ))}
-        </ul>
-      </div>
+      <div className="relative mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:py-20">{copy}</div>
     </section>
+  );
+}
+
+export function FramedPhoto({
+  src,
+  alt,
+  priority = false,
+  tone = "light",
+}: {
+  src: string;
+  alt: string;
+  priority?: boolean;
+  tone?: "light" | "dark";
+}) {
+  return (
+    <figure
+      className={
+        tone === "dark"
+          ? "rounded-[1.75rem] border border-white/15 bg-white/5 p-2 sm:p-3"
+          : "rounded-[1.75rem] border border-line bg-canvas p-2 shadow-[0_18px_40px_rgba(15,28,22,0.08)] sm:p-3"
+      }
+    >
+      <Image
+        src={src}
+        alt={alt}
+        width={1200}
+        height={900}
+        priority={priority}
+        sizes="(min-width: 1024px) 34rem, 100vw"
+        className="aspect-[4/3] w-full rounded-[1.25rem] object-cover"
+      />
+    </figure>
+  );
+}
+
+export function MediaSplit({
+  src,
+  alt,
+  children,
+  reverse = false,
+}: {
+  src: string;
+  alt: string;
+  children: ReactNode;
+  reverse?: boolean;
+}) {
+  return (
+    <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-14">
+      <div className={reverse ? "lg:order-2" : undefined}>{children}</div>
+      <div className={reverse ? "lg:order-1" : undefined}>
+        <FramedPhoto src={src} alt={alt} />
+      </div>
+    </div>
   );
 }
 

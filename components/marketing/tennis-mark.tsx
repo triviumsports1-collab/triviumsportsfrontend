@@ -1,3 +1,17 @@
+import Image from "next/image";
+
+export function TriviumLogo({ className = "h-8 w-auto max-w-[210px] object-contain object-left sm:h-9 sm:max-w-[280px]" }: { className?: string }) {
+  return (
+    <Image
+      src="/brand/trivium-logo.png"
+      alt="Trivium Sports"
+      width={505}
+      height={58}
+      className={className}
+    />
+  );
+}
+
 export function TennisMark({ className }: { className?: string }) {
   return (
     <svg

@@ -1,4 +1,4 @@
-import { PageHero, Section } from "@/components/marketing/page-shell";
+import { FaqBlock, MediaSplit, PageHero, Section } from "@/components/marketing/page-shell";
 import { PageSeo } from "@/components/seo/page-seo";
 import { faqGroups } from "@/lib/content/marketing";
 import { allFaqItems, faqJsonLd } from "@/lib/schema";
@@ -19,35 +19,38 @@ export default function FaqPage() {
         crumbs={[{ name: "FAQ", href: routes.faq }]}
         kicker="FAQ"
         title="Straight answers, grouped by audience."
-        lede="If your question is immigration-specific, we will still send you to the right advisor. Tennis and process questions we answer here."
+        lede="If your question is about immigration, contact us and we will help you find the right next step. Tennis and process questions are answered here."
+        image="/images/after-college-hero.jpg"
+        imageAlt="An outdoor tennis court in the evening"
       />
 
       {faqGroups.map((group, index) => (
         <Section key={group.title} tone={index % 2 === 0 ? "elevated" : "default"}>
           <h2 className="text-3xl font-semibold tracking-tight">{group.title}</h2>
-          <dl className="mt-8 max-w-3xl space-y-8">
-            {group.items.map((item) => (
-              <div key={item.q}>
-                <dt className="text-lg font-semibold text-ink">{item.q}</dt>
-                <dd className="mt-2 text-base leading-7 text-ink-muted">{item.a}</dd>
-              </div>
-            ))}
-          </dl>
+          <div className="mt-8 max-w-3xl">
+            <FaqBlock items={group.items} />
+          </div>
         </Section>
       ))}
 
       <Section>
-        <p className="text-base text-ink-muted">
-          Still looking?{" "}
-          <a className="font-semibold text-brand-deep" href={routes.contact}>
-            Contact the desk
-          </a>{" "}
-          or{" "}
-          <a className="font-semibold text-brand-deep" href={routes.getStarted}>
-            start an intake
-          </a>
-          .
-        </p>
+        <MediaSplit
+          src="/images/after-college-body.jpg"
+          alt="A player hitting on an outdoor hard court"
+          reverse
+        >
+          <h2 className="text-3xl font-semibold tracking-tight">Still looking?</h2>
+          <p className="mt-4 text-base leading-7 text-ink-muted">
+            <a className="inline-flex min-h-11 items-center font-semibold text-brand-deep" href={routes.contact}>
+              Contact us
+            </a>{" "}
+            or{" "}
+            <a className="inline-flex min-h-11 items-center font-semibold text-brand-deep" href={routes.getStarted}>
+              start an intake
+            </a>
+            .
+          </p>
+        </MediaSplit>
       </Section>
     </main>
   );

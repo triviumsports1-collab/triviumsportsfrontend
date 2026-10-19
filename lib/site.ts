@@ -8,10 +8,8 @@ export const site = {
   linkedin: "https://www.linkedin.com/company/triviumsports",
 } as const;
 
-export function whatsappUrl(text?: string) {
-  const base = `https://wa.me/${site.whatsappE164}`;
-  if (!text) return base;
-  return `${base}?text=${encodeURIComponent(text)}`;
+export function whatsappUrl(text = "Hi Trivium Sports") {
+  return `https://wa.me/${site.whatsappE164}?text=${encodeURIComponent(text)}`;
 }
 
 export const routes = {

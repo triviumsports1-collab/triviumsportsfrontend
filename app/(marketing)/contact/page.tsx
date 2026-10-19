@@ -1,5 +1,5 @@
 import { ContactForm } from "@/components/forms/contact-form";
-import { PageHero, Section } from "@/components/marketing/page-shell";
+import { FramedPhoto, PageHero, Section } from "@/components/marketing/page-shell";
 import { PageSeo } from "@/components/seo/page-seo";
 import { pageMetadata } from "@/lib/seo";
 import { site, whatsappUrl, routes } from "@/lib/site";
@@ -13,14 +13,17 @@ export default function ContactPage() {
       <PageHero
         crumbs={[{ name: "Contact", href: routes.contact }]}
         kicker="Contact"
-        title="A tennis desk, not a ticket queue."
-        lede="Write when you are ready to talk about courts, calendars, and who should be on them. We reply as people."
+        title="Talk with the tennis team."
+        lede="Get in touch when you’re ready to talk about courts, calendars, and who should be on them. We reply as people."
+        image="/images/coaches-hero.jpg"
+        imageAlt="Coaching on an outdoor hard court"
       />
 
       <Section tone="elevated">
-        <div className="grid gap-12 lg:grid-cols-2">
+        <div className="grid items-start gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-14">
           <div>
-            <h2 className="text-2xl font-semibold tracking-tight">Direct lines</h2>
+            <FramedPhoto src="/images/clubs-hero.jpg" alt="Empty hard courts at a tennis club" />
+            <h2 className="mt-8 text-2xl font-semibold tracking-tight">Direct lines</h2>
             <ul className="mt-6 space-y-4 text-base text-ink-muted">
               <li>
                 <span className="block text-sm font-semibold text-ink">Email</span>
@@ -30,7 +33,7 @@ export default function ContactPage() {
               </li>
               <li>
                 <span className="block text-sm font-semibold text-ink">WhatsApp</span>
-                <a className="text-brand-deep hover:text-ink" href={whatsappUrl("Hello Trivium Sports")}>
+                <a className="inline-flex min-h-11 items-center text-brand-deep hover:text-ink" href={whatsappUrl()}>
                   {site.whatsappDisplay}
                 </a>
               </li>
@@ -48,7 +51,7 @@ export default function ContactPage() {
               </li>
             </ul>
             <p className="mt-8 text-sm leading-6 text-ink-muted">
-              For a structured qualification, use{" "}
+              For a structured conversation, use{" "}
               <a className="font-medium text-ink underline" href={routes.getStarted}>
                 Get started
               </a>

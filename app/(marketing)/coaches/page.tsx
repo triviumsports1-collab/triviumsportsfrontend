@@ -2,6 +2,7 @@ import { IntakeSection } from "@/components/forms/intake-section";
 import {
   CtaBand,
   FaqBlock,
+  MediaSplit,
   PageHero,
   PillarGrid,
   PrimaryLink,
@@ -35,6 +36,8 @@ export default function CoachesPage() {
         kicker={legacyCoaches.kicker}
         title={legacyCoaches.title}
         lede={legacyCoaches.lede}
+        image="/images/coaches-hero.jpg"
+        imageAlt="A tennis coach feeding balls on a U.S. club court"
         actions={
           <>
             <PrimaryLink href="#coach-intake">Begin your coaching journey</PrimaryLink>
@@ -66,9 +69,14 @@ export default function CoachesPage() {
       </Section>
 
       <Section>
-        <h2 className="text-3xl font-semibold tracking-tight">{legacyCoaches.lookingHeading}</h2>
-        <p className="mt-4 max-w-3xl text-base leading-7 text-ink-muted">{legacyCoaches.lookingP1}</p>
-        <p className="mt-4 max-w-3xl text-base leading-7 text-ink-muted">{legacyCoaches.lookingP2}</p>
+        <MediaSplit
+          src="/images/coaches-body.jpg"
+          alt="Tennis balls beside the net on a hard court"
+        >
+          <h2 className="text-3xl font-semibold tracking-tight">{legacyCoaches.lookingHeading}</h2>
+          <p className="mt-4 text-base leading-7 text-ink-muted">{legacyCoaches.lookingP1}</p>
+          <p className="mt-4 text-base leading-7 text-ink-muted">{legacyCoaches.lookingP2}</p>
+        </MediaSplit>
       </Section>
 
       <Section tone="elevated">

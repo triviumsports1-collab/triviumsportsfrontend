@@ -2,6 +2,7 @@ import {
   Card,
   CtaBand,
   FaqBlock,
+  FramedPhoto,
   PageHero,
   PillarGrid,
   PrimaryLink,
@@ -30,6 +31,8 @@ export default function AfterCollegePage() {
         kicker={afterCollegeLanding.kicker}
         title={afterCollegeLanding.title}
         lede={afterCollegeLanding.lede}
+        image="/images/after-college-hero.jpg"
+        imageAlt="A college tennis court at dusk"
         actions={
           <>
             <PrimaryLink href={`${routes.getStarted}?path=coach`}>Start the conversation</PrimaryLink>
@@ -39,12 +42,18 @@ export default function AfterCollegePage() {
       />
 
       <Section>
-        <div className="grid gap-6 md:grid-cols-2">
-          {afterCollegeLanding.explain.map((item) => (
-            <Card key={item.title} title={item.title}>
-              <p>{item.body}</p>
-            </Card>
-          ))}
+        <div className="grid items-center gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:gap-12">
+          <div className="grid gap-6">
+            {afterCollegeLanding.explain.map((item) => (
+              <Card key={item.title} title={item.title}>
+                <p>{item.body}</p>
+              </Card>
+            ))}
+          </div>
+          <FramedPhoto
+            src="/images/after-college-body.jpg"
+            alt="A former college player hitting a forehand on an outdoor hard court"
+          />
         </div>
       </Section>
 
@@ -70,8 +79,8 @@ export default function AfterCollegePage() {
       <Section tone="elevated">
         <h2 className="text-3xl font-semibold tracking-tight">OPT and STEM OPT questions</h2>
         <p className="mt-4 max-w-3xl text-base leading-7 text-ink-muted">
-          Plain-language answers for former college tennis players. We work with immigration counsel.
-          We do not decide whether you qualify.
+          Plain-language answers for former college tennis players. We check whether an OPT or STEM
+          OPT path at a tennis club could work for you, together with immigration counsel.
         </p>
         <div className="mt-8">
           <FaqBlock items={optFaqs} />
@@ -80,7 +89,7 @@ export default function AfterCollegePage() {
 
       <CtaBand
         title="Start with your tennis story."
-        lede="Tell us when you can be on court. Eligibility stays with your DSO."
+        lede="Tell us when you can be on court. Your school’s DSO makes the final decision."
         href={`${routes.getStarted}?path=coach`}
         label="Tell us about you"
       />

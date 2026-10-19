@@ -10,7 +10,7 @@ export default function ErrorPage({
     <main className="mx-auto flex min-h-[50vh] max-w-lg flex-col justify-center px-4 py-20 text-center">
       <h1 className="text-3xl font-semibold tracking-tight text-ink">Something went wrong</h1>
       <p className="mt-4 text-base leading-7 text-ink-muted">
-        Please refresh or return home. If this continues, write to the tennis desk.
+        Please refresh or return home. If this continues, email info@triviumsports.com.
       </p>
       <button
         type="button"

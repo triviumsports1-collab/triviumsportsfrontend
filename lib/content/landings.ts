@@ -1,8 +1,4 @@
-export const trustPills = [
-  "U.S. clubs & academies",
-  "Adults 18+",
-  "Not a law firm",
-] as const;
+export const trustPills = ["U.S. clubs & academies"] as const;
 
 export const visaDisclaimer =
   "Trivium Sports is not a law firm and does not provide immigration advice. We work with immigration counsel. Your Designated School Official decides student status. We coordinate tennis work with clubs so the on-court chapter is structured and transparent.";
@@ -31,12 +27,12 @@ export const coachLanding = {
     {
       icon: "pathway",
       title: "High-Performance Pathway",
-      body: "Clinics, elite privates, and junior-to-pro progressions — the full tennis day, not a single hitting block advertised as a career.",
+      body: "Clinics and elite privates — the full tennis day, not a single hitting block advertised as a career.",
     },
     {
       icon: "compliance",
       title: "Global Talent & Compliance",
-      body: "OPT and STEM OPT timing treated as a professional process. We work with immigration counsel. We do not decide eligibility, and we do not file petitions.",
+      body: "OPT and STEM OPT timing treated as a professional process. We check whether an OPT or STEM OPT path at a tennis club could work for you, together with immigration counsel.",
     },
     {
       icon: "architecture",
@@ -124,7 +120,7 @@ export const clubLanding = {
     {
       icon: "pathway",
       title: "High-Performance Pathway",
-      body: "Structured clinics, elite private training, and a junior-to-pro competitive pathway your members can feel on a Saturday morning.",
+      body: "Structured clinics and elite private training your members can feel on a Saturday morning.",
     },
   ],
   needs: [
@@ -158,15 +154,15 @@ export const clubLanding = {
 export const playerLanding = {
   kicker: "For players",
   title: "U.S. tennis with a plan — not a tourist week.",
-  lede: "Player management for international adults who want serious tennis in the United States: academy placement, a training block, and a competition calendar, with one professional point of contact.",
+  lede: "Player management for international professional athletes who want serious tennis in the United States: academy placement, a training block, and a competition calendar, with one professional point of contact.",
   pillarHeading: "A high-performance stay, not a tourist week",
   pillarLede:
-    "Training, competition, and living logistics planned as one pathway — with elite professionals and a club that already knows how to host international adults.",
+    "Training, competition, and living logistics planned as one pathway — with elite professionals and a club that already knows how to host international professional athletes.",
   pillars: [
     {
       icon: "pathway",
       title: "High-Performance Pathway",
-      body: "Structured academy blocks, elite private training, and a junior-to-pro competitive calendar coordinated with recovery — not a brochure of every tournament in the region.",
+      body: "Structured academy blocks and elite private training, coordinated with recovery — not a brochure of every tournament in the region.",
     },
     {
       icon: "professionals",
@@ -181,7 +177,7 @@ export const playerLanding = {
     {
       icon: "compliance",
       title: "Global Talent & Compliance",
-      body: "Adults 18+ only on this intake. We are a professional point of contact for an international stay — not a law firm, and not a guarantee of ranking outcomes.",
+      body: "One professional point of contact for an international stay, with no guarantee of ranking outcomes.",
     },
   ],
   help: [
@@ -217,15 +213,15 @@ export const playerLanding = {
 export const afterCollegeLanding = {
   kicker: "Coaching after college",
   title: "OPT and STEM OPT for former college tennis players.",
-  lede: "Your DSO decides whether Optional Practical Training or STEM OPT fits your degree. Trivium explains both in tennis terms, then introduces you to U.S. clubs if that window is already yours. We work with immigration counsel. We do not tell you whether you qualify.",
+  lede: "Your DSO decides whether Optional Practical Training or STEM OPT fits your degree. Trivium explains both in tennis terms, then introduces you to U.S. clubs if that window is already yours. We check whether an OPT or STEM OPT path at a tennis club could work for you, together with immigration counsel.",
   explain: [
     {
       title: "Optional Practical Training",
-      body: "OPT is work authorization available to many F-1 students after a qualifying U.S. degree, usually for up to 12 months, in a field related to that degree. Some former college tennis players use it to coach. Coaching does not automatically qualify — it depends on the degree field and your DSO’s guidance. It is not a tennis visa, and it is not guaranteed.",
+      body: "OPT is work authorization available to many F-1 students after a qualifying U.S. degree, usually for up to 12 months, in a field related to that degree. Some former college tennis players use it to coach. Coaching does not automatically qualify — it depends on the degree field and your DSO’s guidance. It is not guaranteed.",
     },
     {
       title: "STEM OPT",
-      body: "STEM OPT is an extension available only when the degree is on the official STEM list and the extra conditions are met. It is not available to every tennis player who competed in college. If the degree is not on that list, the longer window does not apply. We do not decide this. We work with immigration counsel, and your DSO remains the authority.",
+      body: "STEM OPT is an extension available only when the degree is on the official STEM list and the extra conditions are met. It is not available to every tennis player who competed in college. If the degree is not on that list, the longer window does not apply. We check whether an OPT or STEM OPT path at a tennis club could work for you, together with immigration counsel, and your DSO remains the authority.",
     },
   ],
   pillarHeading: "From the last dual match to a coaching chapter",
@@ -280,7 +276,7 @@ export const aboutLanding = {
     {
       icon: "pathway",
       title: "High-Performance Pathway",
-      body: "We exist for structured tennis: clinics, elite privates, and junior-to-pro environments inside U.S. clubs and academies.",
+      body: "We exist for structured tennis: clinics and elite privates inside U.S. clubs and academies.",
     },
     {
       icon: "professionals",
@@ -336,7 +332,7 @@ export const jobsLanding = {
     {
       icon: "pathway",
       title: "High-Performance Pathway",
-      body: "Academy blocks, tournament players, junior development from 10-and-under through high-school duals, and a junior-to-pro competitive standard.",
+      body: "Academy blocks, tournament players, and junior development from 10-and-under through high-school duals.",
     },
     {
       icon: "architecture",
@@ -346,7 +342,7 @@ export const jobsLanding = {
     {
       icon: "compliance",
       title: "Global Talent & Compliance",
-      body: "U.S. courts you can actually reach, with work-authorization stance stated plainly on each published listing. No invented salaries. No visa promises.",
+      body: "U.S. courts you can actually reach. No invented salaries. No visa promises.",
     },
   ],
 } as const;

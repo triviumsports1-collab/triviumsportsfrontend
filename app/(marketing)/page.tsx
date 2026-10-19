@@ -1,4 +1,5 @@
 import { HomeHero } from "@/components/marketing/home-hero";
+import { MediaSplit } from "@/components/marketing/page-shell";
 import { JsonLd } from "@/components/seo/json-ld";
 import { breadcrumbJsonLd, webPageJsonLd } from "@/lib/schema";
 import { pageMetadata, pages } from "@/lib/seo";
@@ -23,13 +24,21 @@ export default function Home() {
 
       <section className="bg-canvas-elevated pt-10">
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:py-20">
-          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-brand-deep">
-            How it works
-          </p>
-          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-ink">
-            From first conversation to on-court presence.
-          </h2>
-          <ol className="mt-10 grid gap-8 md:grid-cols-3">
+          <MediaSplit
+            src="/images/home-body.jpg"
+            alt="Sunrise on an empty hard court at a U.S. tennis club"
+          >
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-brand-deep">
+              How it works
+            </p>
+            <h2 className="mt-3 text-3xl font-semibold tracking-tight text-ink">
+              From first conversation to on-court presence.
+            </h2>
+            <p className="mt-4 text-base leading-7 text-ink-muted">
+              Three steps, then a person on the other side of the introduction.
+            </p>
+          </MediaSplit>
+          <ol className="mt-12 grid gap-8 md:grid-cols-3">
             {[
               {
                 step: "01",
@@ -80,7 +89,7 @@ export default function Home() {
             href={routes.afterCollege}
             className="mt-8 inline-flex min-h-12 items-center justify-center rounded-full bg-brand px-7 text-base font-semibold text-ink hover:bg-brand-deep hover:text-canvas-elevated"
           >
-            Read the OPT path
+            Read the OPT Path.
           </a>
         </div>
       </section>
@@ -94,8 +103,8 @@ export default function Home() {
             Tell us which side of the net you are on.
           </h2>
           <p className="mt-4 text-base leading-7 text-ink-muted">
-            The intake begins by choosing Coach, Player, or Club — then we ask the questions that
-            actually qualify the conversation.
+            The intake begins by choosing Coach, Player, or Club. Then we ask the questions that
+            matter for that path.
           </p>
           <a
             href={routes.getStarted}

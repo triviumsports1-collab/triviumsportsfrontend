@@ -1,8 +1,8 @@
 import {
   Card,
   CtaBand,
+  MediaSplit,
   PageHero,
-  PillarGrid,
   PrimaryLink,
   Section,
 } from "@/components/marketing/page-shell";
@@ -24,30 +24,30 @@ export default function TennisCoachingJobsPage() {
         kicker={jobsLanding.kicker}
         title={jobsLanding.title}
         lede={jobsLanding.lede}
+        image="/images/jobs-hero.jpg"
+        imageAlt="A tennis coach standing by the net on a sunlit club court"
         actions={<PrimaryLink href={`${routes.getStarted}?path=coach`}>I am a Coach</PrimaryLink>}
       />
 
       <Section>
-        <h2 className="text-3xl font-semibold tracking-tight">Role types U.S. clubs ask us about</h2>
-        <p className="mt-4 max-w-3xl text-base leading-7 text-ink-muted">
-          These are the tennis jobs directors describe to us. They are not live listings, and there
-          is no public apply button until a role is actually open.
-        </p>
-        <ul className="mt-8 grid gap-6 md:grid-cols-2">
+        <MediaSplit
+          src="/images/jobs-body.jpg"
+          alt="A coach and player talking beside the net after practice"
+          reverse
+        >
+          <h2 className="text-3xl font-semibold tracking-tight">Role types U.S. clubs ask us about</h2>
+          <p className="mt-4 text-base leading-7 text-ink-muted">
+            These are the tennis jobs directors describe to us. They are not live listings, and there
+            is no public apply button until a role is actually open.
+          </p>
+        </MediaSplit>
+        <ul className="mt-12 grid gap-6 md:grid-cols-2">
           {jobRoles.map((role) => (
             <Card key={role.title} title={role.title}>
               <p>{role.body}</p>
             </Card>
           ))}
         </ul>
-      </Section>
-
-      <Section tone="elevated">
-        <PillarGrid
-          heading={jobsLanding.pillarHeading}
-          lede={jobsLanding.pillarLede}
-          items={jobsLanding.pillars}
-        />
       </Section>
 
       <CtaBand

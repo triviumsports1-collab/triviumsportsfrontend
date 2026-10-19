@@ -1,5 +1,5 @@
 import { routes, site, whatsappUrl } from "@/lib/site";
-import { TennisMark } from "@/components/marketing/tennis-mark";
+import { TriviumLogo } from "@/components/marketing/tennis-mark";
 
 const columns = [
   {
@@ -35,19 +35,18 @@ export function SiteFooter() {
     <footer className="border-t border-line bg-canvas">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-4">
         <div>
-          <p className="flex items-center gap-2 font-semibold text-ink">
-            <TennisMark className="h-5 w-5 text-brand" />
-            {site.name}
+          <p>
+            <TriviumLogo className="h-8 w-auto max-w-[220px] object-contain object-left" />
           </p>
           <p className="mt-3 text-sm leading-6 text-ink-muted">
             Connecting tennis coaches and players with U.S. clubs and academies.
           </p>
           <p className="mt-4 text-sm text-ink-muted">
-            <a className="hover:text-ink" href={`mailto:${site.email}`}>
+            <a className="inline-flex min-h-11 items-center hover:text-ink" href={`mailto:${site.email}`}>
               {site.email}
             </a>
             <br />
-            <a className="hover:text-ink" href={whatsappUrl()}>
+            <a className="inline-flex min-h-11 items-center hover:text-ink" href={whatsappUrl()}>
               WhatsApp {site.whatsappDisplay}
             </a>
           </p>
@@ -58,7 +57,7 @@ export function SiteFooter() {
             <ul className="mt-3 space-y-2 text-sm text-ink-muted">
               {column.links.map((link) => (
                 <li key={link.href}>
-                  <a className="hover:text-ink" href={link.href}>
+                  <a className="inline-flex min-h-11 items-center hover:text-ink" href={link.href}>
                     {link.label}
                   </a>
                 </li>
@@ -71,11 +70,11 @@ export function SiteFooter() {
         <div className="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-6 text-xs text-ink-muted sm:flex-row sm:justify-between sm:px-6">
           <p>© 2026 Trivium Sports Inc.</p>
           <p>
-            <a className="hover:text-ink" href={site.instagram}>
+            <a className="inline-flex min-h-11 items-center hover:text-ink" href={site.instagram}>
               Instagram
             </a>
             {" · "}
-            <a className="hover:text-ink" href={site.linkedin}>
+            <a className="inline-flex min-h-11 items-center hover:text-ink" href={site.linkedin}>
               LinkedIn
             </a>
           </p>

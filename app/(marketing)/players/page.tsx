@@ -2,8 +2,8 @@ import { IntakeSection } from "@/components/forms/intake-section";
 import {
   Card,
   CtaBand,
+  MediaSplit,
   PageHero,
-  PillarGrid,
   PrimaryLink,
   SecondaryLink,
   Section,
@@ -24,6 +24,8 @@ export default function PlayersPage() {
         kicker={playerLanding.kicker}
         title={playerLanding.title}
         lede={playerLanding.lede}
+        image="/images/players-hero.jpg"
+        imageAlt="A professional tennis player practicing on an outdoor hard court"
         actions={
           <>
             <PrimaryLink href="#player-intake">Share your goals</PrimaryLink>
@@ -33,13 +35,18 @@ export default function PlayersPage() {
       />
 
       <Section>
-        <h2 className="text-3xl font-semibold tracking-tight">Player management for a U.S. tennis stay</h2>
-        <p className="mt-4 max-w-3xl text-base leading-7 text-ink-muted">
-          Player management here means one professional point of contact for an adult who wants
-          academy placement, a defined training block, or competition planning in the United States.
-          It is not college recruiting, and it is not a program for minors.
-        </p>
-        <ul className="mt-8 grid gap-6 md:grid-cols-3">
+        <MediaSplit
+          src="/images/players-body.jpg"
+          alt="Professional players practicing on adjacent outdoor hard courts"
+        >
+          <h2 className="text-3xl font-semibold tracking-tight">Player management for a U.S. tennis stay</h2>
+          <p className="mt-4 text-base leading-7 text-ink-muted">
+            Player management here means one professional point of contact for an international
+            professional athlete who wants academy placement, a defined training block, or competition
+            planning in the United States. It is not college recruiting.
+          </p>
+        </MediaSplit>
+        <ul className="mt-12 grid gap-6 md:grid-cols-3">
           {playerLanding.help.map((item) => (
             <Card key={item.title} title={item.title}>
               <p>{item.body}</p>
@@ -49,11 +56,18 @@ export default function PlayersPage() {
       </Section>
 
       <Section tone="elevated">
-        <PillarGrid
-          heading={playerLanding.pillarHeading}
-          lede={playerLanding.pillarLede}
-          items={playerLanding.pillars}
-        />
+        <h2 className="text-3xl font-semibold tracking-tight">How we support professional athletes</h2>
+        <ul className="mt-8 grid gap-6 md:grid-cols-3">
+          <Card title="Professional management">
+            <p>One point of contact for the athlete’s season and career.</p>
+          </Card>
+          <Card title="Competition oversight">
+            <p>Tournament schedule, entries, travel, and training planned together.</p>
+          </Card>
+          <Card title="Immigration support through counsel">
+            <p>We work with immigration counsel so athletes can train and compete in the U.S.</p>
+          </Card>
+        </ul>
       </Section>
 
       <Section>
