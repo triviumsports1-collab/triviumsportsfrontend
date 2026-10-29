@@ -50,15 +50,32 @@ export async function POST(
 
   // Forward the submission to Spring server-to-server.
   // No Origin header is included, so CORS is never triggered on the Spring side.
-  const upstream = await fetch(
-    `${resolveSpringBase()}/api/v1/forms/${encodeURIComponent(slug)}/submissions`,
-    {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(body),
-      cache: "no-store",
-    },
-  );
+  let upstream: Response;
+  try {
+    upstream = await fetch(
+      `${resolveSpringBase()}/api/v1/forms/${encodeURIComponent(slug)}/submissions`,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body),
+        cache: "no-store",
+      },
+    );
+  } catch (err) {
+    // Network error — Spring is unreachable (cold start, deploy in progress, etc.).
+    // Return a problem+json body so the browser client can show a useful message.
+    const message =
+      err instanceof Error ? err.message : "Could not reach the Trivium Sports API";
+    return NextResponse.json(
+      {
+        title: "Service Unavailable",
+        detail: message,
+        status: 503,
+        type: "https://triviumsports.example/problems/service-unavailable",
+      },
+      { status: 503 },
+    );
+  }
 
   const payload: unknown = await upstream.json().catch(() => null);
 
