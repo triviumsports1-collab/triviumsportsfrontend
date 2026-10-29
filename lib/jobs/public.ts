@@ -1,3 +1,6 @@
+// Server-only. Uses the shared resolver so the Spring URL is configured in one place.
+import { resolveSpringBase } from "@/lib/api/spring-base";
+
 export type PublishedJob = {
   id: string;
   slug: string;
@@ -42,12 +45,7 @@ export const ROLE_TYPE_LABELS: Record<string, string> = {
 };
 
 function apiBase(): string {
-  const server = process.env.API_BASE_URL?.trim();
-  if (server) {
-    return server;
-  }
-  // Server-only origin. NEXT_PUBLIC_API_BASE_URL is ignored so it is never required in the client bundle.
-  return "http://127.0.0.1:8080";
+  return resolveSpringBase();
 }
 
 function postedMillis(job: PublishedJob): number {

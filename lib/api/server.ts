@@ -6,10 +6,7 @@ import type { Me } from "@/lib/api/types";
 import { isRole, type Role } from "@/lib/auth/roles";
 import { homeForRole } from "@/lib/auth/roles";
 import { readAccessToken } from "@/lib/auth/session";
-
-function apiBase(): string {
-  return process.env.API_BASE_URL ?? "http://127.0.0.1:8080";
-}
+import { resolveSpringBase } from "@/lib/api/spring-base";
 
 export async function springFetch(path: string, init: RequestInit = {}): Promise<Response> {
   await connection();
@@ -34,7 +31,7 @@ export async function springFetch(path: string, init: RequestInit = {}): Promise
   requestHeaders.forEach((value, key) => {
     headerRecord[key] = value;
   });
-  return fetch(`${apiBase()}${path}`, {
+  return fetch(`${resolveSpringBase()}${path}`, {
     ...init,
     headers: headerRecord,
     cache: "no-store",
