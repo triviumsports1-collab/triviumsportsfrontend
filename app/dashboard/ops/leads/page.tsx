@@ -15,6 +15,7 @@ const AUDIENCES = [
   { id: "COACH", label: "Coaches" },
   { id: "CLUB", label: "Clubs" },
   { id: "PLAYER", label: "Players" },
+  { id: "CONTACT", label: "Contact" },
 ] as const;
 
 function labelFor(key: string): string {
@@ -68,13 +69,18 @@ export default async function OpsLeadsPage({
   const exportHref = audience
     ? `/dashboard/ops/leads/export?audience=${encodeURIComponent(audience)}`
     : "/dashboard/ops/leads/export";
-  const title = audience === "PLAYER" ? "Players" : "CRM / Leads";
+  const title =
+    audience === "PLAYER"
+      ? "Players"
+      : audience === "CONTACT"
+        ? "Contact messages"
+        : "CRM / Leads";
   return (
     <DashboardPage title={title} wide>
       <div className="flex flex-wrap items-start justify-between gap-3">
         <p className="max-w-2xl text-sm text-ink-muted">
-          Public coach, club, and player intakes. New submissions appear here immediately after
-          submit — this is not the registered-user directory.
+          Public coach, club, player intakes, and contact-page messages. New submissions appear
+          here immediately after submit — this is not the registered-user directory.
         </p>
         <a
           href={exportHref}

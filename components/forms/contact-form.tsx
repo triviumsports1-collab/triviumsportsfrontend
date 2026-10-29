@@ -2,16 +2,18 @@
 
 import { FormEvent, useState } from "react";
 import { fieldClassName, labelClassName } from "@/components/marketing/page-shell";
+import { parseProblem } from "@/lib/api/problem";
 import { site } from "@/lib/site";
 
 export function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
+  const [pending, setPending] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  function onSubmit(event: FormEvent<HTMLFormElement>) {
+  async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    const email = String(data.get("email") ?? "");
+    const email = String(data.get("email") ?? "").trim();
     const message = String(data.get("message") ?? "").trim();
     if (!email.includes("@") || message.length < 8) {
       setError("Please include a valid email and a short message.");
@@ -19,24 +21,53 @@ export function ContactForm() {
     }
     const name = String(data.get("name") ?? "").trim();
     const audience = String(data.get("audience") ?? "").trim();
-    const subject = "Message from the Trivium Sports website";
-    const body = [`Name: ${name || "(not given)"}`, `I am a: ${audience || "(not selected)"}`, "", message].join("\n");
+
+    // Build the payload — omit optional fields when blank.
+    const payload: Record<string, string> = { email, message };
+    if (name) payload.name = name;
+    if (audience) payload.audience = audience;
+
     setError(null);
-    setSubmitted(true);
-    window.location.href = `mailto:${site.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    setPending(true);
+    try {
+      // POST goes through the Route Handler at app/api/v1/forms/[slug]/submissions/route.ts,
+      // which forwards the call to Spring server-to-server (no CORS issues).
+      const response = await fetch("/api/v1/forms/contact/submissions", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ payload }),
+      });
+      const body: unknown = await response.json().catch(() => null);
+      if (response.status !== 201) {
+        const problem = parseProblem(body);
+        setError(problem?.detail ?? "Could not send your message. Please try again.");
+        return;
+      }
+      setSubmitted(true);
+    } catch {
+      setError(
+        "Could not reach Trivium Sports. Try again, or email " + site.email + " directly.",
+      );
+    } finally {
+      setPending(false);
+    }
   }
 
   if (submitted) {
     return (
       <p className="rounded-3xl border border-line bg-canvas p-6 text-base leading-7 text-ink-muted">
-        Your message is ready. Your email app should open a draft to {site.email}. Send that draft
-        to reach us. If it does not open, email that address directly.
+        Message sent. Our tennis team will follow up at the email you provided. You can also
+        reach us directly at{" "}
+        <a className="font-medium text-ink underline" href={`mailto:${site.email}`}>
+          {site.email}
+        </a>
+        .
       </p>
     );
   }
 
   return (
-    <form className="space-y-5" onSubmit={onSubmit} noValidate>
+    <form className="space-y-5" onSubmit={(event) => void onSubmit(event)} noValidate>
       <div>
         <label className={labelClassName} htmlFor="contact-name">
           Name
@@ -74,7 +105,12 @@ export function ContactForm() {
         <label className={labelClassName} htmlFor="contact-message">
           Message <span className="text-brand-deep">*</span>
         </label>
-        <textarea id="contact-message" name="message" rows={5} className={`${fieldClassName} py-3`} />
+        <textarea
+          id="contact-message"
+          name="message"
+          rows={5}
+          className={`${fieldClassName} py-3`}
+        />
       </div>
       {error ? (
         <p className="text-sm font-medium text-red-800" role="alert">
@@ -83,9 +119,10 @@ export function ContactForm() {
       ) : null}
       <button
         type="submit"
-        className="inline-flex min-h-12 items-center justify-center rounded-full bg-brand px-7 text-base font-semibold text-ink hover:bg-brand-deep hover:text-canvas-elevated"
+        disabled={pending}
+        className="inline-flex min-h-12 items-center justify-center rounded-full bg-brand px-7 text-base font-semibold text-ink hover:bg-brand-deep hover:text-canvas-elevated disabled:opacity-60"
       >
-        Send message
+        {pending ? "Sending…" : "Send message"}
       </button>
     </form>
   );

@@ -111,7 +111,7 @@ export type OpsSummary = {
 
 export type OpsLead = {
   id: string;
-  audience: "COACH" | "CLUB" | "PLAYER" | string;
+  audience: "COACH" | "CLUB" | "PLAYER" | "CONTACT" | string;
   slug: string;
   status: "NEW" | "REVIEWING" | "CLOSED" | string;
   displayName: string | null;
