@@ -17,10 +17,6 @@
     }
   ],
 
-  "env": {
-    "API_BASE_URL": "@trivium-api-base-url"
-  },
-
   "git": {
     "deploymentEnabled": {
       "main": true
