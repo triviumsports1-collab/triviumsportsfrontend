@@ -12,7 +12,9 @@ function loadScript(): Promise<void> {
   if (window.turnstile) {
     return Promise.resolve();
   }
-  const existing = document.querySelector<HTMLScriptElement>('script[src^="https://challenges.cloudflare.com/turnstile"]');
+  const existing = document.querySelector<HTMLScriptElement>(
+    'script[src^="https://challenges.cloudflare.com/turnstile"]',
+  );
   if (existing) {
     return new Promise((resolve) => {
       existing.addEventListener("load", () => resolve(), { once: true });
@@ -30,8 +32,15 @@ function loadScript(): Promise<void> {
 }
 
 /**
- * Invisible Turnstile. Renders a 0-height host so form layout is unchanged.
- * When NEXT_PUBLIC_TURNSTILE_SITE_KEY is unset (local/CI), this is a no-op.
+ * Managed Turnstile with appearance=interaction-only.
+ *
+ * Do not use size=invisible. That loads Cloudflare's `invisible?lang=auto`
+ * challenge document, whose own iframe CSP omits `data:` and logs
+ * "Connecting to 'data:,' violates connect-src" — a Cloudflare-side probe,
+ * not a missing header on triviumsports.com (this app does not set CSP).
+ *
+ * interaction-only stays visually hidden unless a challenge is required,
+ * so the form layout is unchanged for typical visitors.
  */
 export function TurnstileWidget({
   onToken,
@@ -57,8 +66,9 @@ export function TurnstileWidget({
         }
         widgetIdRef.current = window.turnstile.render(hostRef.current, {
           sitekey: TURNSTILE_SITE_KEY,
-          size: "invisible",
+          size: "flexible",
           appearance: "interaction-only",
+          theme: "light",
           callback: (token) => onTokenRef.current(token),
           "expired-callback": () => onTokenRef.current(""),
           "error-callback": () => onTokenRef.current(""),
@@ -88,5 +98,5 @@ export function TurnstileWidget({
     return null;
   }
 
-  return <div ref={hostRef} style={{ height: 0, overflow: "hidden" }} />;
+  return <div ref={hostRef} />;
 }

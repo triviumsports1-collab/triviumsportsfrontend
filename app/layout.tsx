@@ -33,8 +33,14 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
+  const turnstileEnabled = Boolean(process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY?.trim());
   return (
     <html lang="en" className={`${inter.variable} h-full antialiased`}>
+      <head>
+        {turnstileEnabled ? (
+          <link rel="preconnect" href="https://challenges.cloudflare.com" />
+        ) : null}
+      </head>
       <body className="min-h-full flex flex-col bg-canvas font-sans text-ink">
         {children}
         <Analytics />

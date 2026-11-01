@@ -9,8 +9,9 @@ export type TurnstileApi = {
     container: HTMLElement,
     options: {
       sitekey: string;
-      size?: "normal" | "compact" | "flexible" | "invisible";
+      size?: "normal" | "compact" | "flexible";
       appearance?: "always" | "execute" | "interaction-only";
+      theme?: "auto" | "light" | "dark";
       callback?: (token: string) => void;
       "expired-callback"?: () => void;
       "error-callback"?: () => void;
