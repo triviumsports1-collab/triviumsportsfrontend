@@ -50,13 +50,20 @@ export async function POST(
 
   // Forward the submission to Spring server-to-server.
   // No Origin header is included, so CORS is never triggered on the Spring side.
+  // Pass the browser IP so Spring can rate-limit the real client, not this host.
+  const forwarded = request.headers.get("x-forwarded-for");
+  const realIp = request.headers.get("x-real-ip");
+  const clientIp = forwarded?.split(",")[0]?.trim() || realIp?.trim() || "";
   let upstream: Response;
   try {
     upstream = await fetch(
       `${resolveSpringBase()}/api/v1/forms/${encodeURIComponent(slug)}/submissions`,
       {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          ...(clientIp ? { "X-Forwarded-For": clientIp, "X-Real-IP": clientIp } : {}),
+        },
         body: JSON.stringify(body),
         cache: "no-store",
       },

@@ -1,22 +1,36 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { FormEvent, useCallback, useState } from "react";
+import { HoneypotField, honeypotFilled } from "@/components/forms/honeypot-field";
+import { TurnstileWidget } from "@/components/forms/turnstile-widget";
 import { fieldClassName, labelClassName } from "@/components/marketing/page-shell";
 import { parseProblem } from "@/lib/api/problem";
 import { site } from "@/lib/site";
+import { isTurnstileEnabled } from "@/lib/spam/turnstile";
 
 export function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
   const [pending, setPending] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [captchaToken, setCaptchaToken] = useState("");
+  const [captchaReset, setCaptchaReset] = useState(0);
+  const onToken = useCallback((token: string) => setCaptchaToken(token), []);
 
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
+    if (honeypotFilled(data)) {
+      setSubmitted(true);
+      return;
+    }
     const email = String(data.get("email") ?? "").trim();
     const message = String(data.get("message") ?? "").trim();
     if (!email.includes("@") || message.length < 8) {
       setError("Please include a valid email and a short message.");
+      return;
+    }
+    if (isTurnstileEnabled() && !captchaToken) {
+      setError("Please wait a moment and try again.");
       return;
     }
     const name = String(data.get("name") ?? "").trim();
@@ -35,12 +49,13 @@ export function ContactForm() {
       const response = await fetch("/api/v1/forms/contact/submissions", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ payload }),
+        body: JSON.stringify({ payload, captchaToken }),
       });
       const body: unknown = await response.json().catch(() => null);
       if (response.status !== 201) {
         const problem = parseProblem(body);
         setError(problem?.detail ?? "Could not send your message. Please try again.");
+        setCaptchaReset((value) => value + 1);
         return;
       }
       setSubmitted(true);
@@ -117,13 +132,17 @@ export function ContactForm() {
           {error}
         </p>
       ) : null}
-      <button
-        type="submit"
-        disabled={pending}
-        className="inline-flex min-h-12 items-center justify-center rounded-full bg-brand px-7 text-base font-semibold text-ink hover:bg-brand-deep hover:text-canvas-elevated disabled:opacity-60"
-      >
-        {pending ? "Sending…" : "Send message"}
-      </button>
+      <div>
+        <HoneypotField />
+        <TurnstileWidget onToken={onToken} resetSignal={captchaReset} />
+        <button
+          type="submit"
+          disabled={pending}
+          className="inline-flex min-h-12 items-center justify-center rounded-full bg-brand px-7 text-base font-semibold text-ink hover:bg-brand-deep hover:text-canvas-elevated disabled:opacity-60"
+        >
+          {pending ? "Sending…" : "Send message"}
+        </button>
+      </div>
     </form>
   );
 }

@@ -1,11 +1,14 @@
 "use client";
 
-import { FormEvent, useMemo, useState } from "react";
+import { FormEvent, useCallback, useMemo, useState } from "react";
 import { useSearchParams } from "next/navigation";
+import { HoneypotField, honeypotFilled } from "@/components/forms/honeypot-field";
+import { TurnstileWidget } from "@/components/forms/turnstile-widget";
 import { ProblemAlert } from "@/components/saas/problem-alert";
 import { fieldClassName, labelClassName } from "@/components/marketing/page-shell";
 import { isRecord, fieldErrorMap, parseProblem } from "@/lib/api/problem";
 import { site } from "@/lib/site";
+import { isTurnstileEnabled } from "@/lib/spam/turnstile";
 
 export type AudiencePath = "coach" | "player" | "club";
 
@@ -52,6 +55,9 @@ export function IntakeForm({
   const [pending, setPending] = useState(false);
   const [detail, setDetail] = useState<string | null>(null);
   const [fields, setFields] = useState<Record<string, string>>({});
+  const [captchaToken, setCaptchaToken] = useState("");
+  const [captchaReset, setCaptchaReset] = useState(0);
+  const onToken = useCallback((token: string) => setCaptchaToken(token), []);
 
   const heading = useMemo(() => {
     if (path === "coach") return "Coach intake";
@@ -69,9 +75,17 @@ export function IntakeForm({
       return;
     }
     const data = new FormData(event.currentTarget);
+    if (honeypotFilled(data)) {
+      setSubmitted(true);
+      return;
+    }
+    if (isTurnstileEnabled() && !captchaToken) {
+      setDetail("Please wait a moment and try again.");
+      return;
+    }
     const payload: Record<string, string | number> = {};
     data.forEach((value, key) => {
-      if (key === "path" || typeof value !== "string") {
+      if (key === "path" || key === "website" || key === "company" || typeof value !== "string") {
         return;
       }
       const trimmed = value.trim();
@@ -89,13 +103,14 @@ export function IntakeForm({
       const response = await fetch(`/api/v1/forms/${slugs[path]}/submissions`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ payload }),
+        body: JSON.stringify({ payload, captchaToken }),
       });
       const body: unknown = await response.json().catch(() => null);
       if (response.status !== 201 || !isRecord(body) || typeof body.id !== "string") {
         const problem = parseProblem(body) ?? { detail: "Could not send intake" };
         setDetail(problem.detail ?? "Could not send intake");
         setFields(fieldErrorMap(problem));
+        setCaptchaReset((value) => value + 1);
         return;
       }
       setSubmitted(true);
@@ -168,13 +183,17 @@ export function IntakeForm({
 
           <ProblemAlert detail={detail} fieldErrors={fields} />
 
-          <button
-            type="submit"
-            disabled={pending}
-            className="inline-flex min-h-12 items-center justify-center rounded-full bg-brand px-7 text-base font-semibold text-ink hover:bg-brand-deep hover:text-canvas-elevated disabled:opacity-60"
-          >
-            {pending ? "Sending…" : "Submit intake"}
-          </button>
+          <div>
+            <HoneypotField />
+            <TurnstileWidget onToken={onToken} resetSignal={captchaReset} />
+            <button
+              type="submit"
+              disabled={pending}
+              className="inline-flex min-h-12 items-center justify-center rounded-full bg-brand px-7 text-base font-semibold text-ink hover:bg-brand-deep hover:text-canvas-elevated disabled:opacity-60"
+            >
+              {pending ? "Sending…" : "Submit intake"}
+            </button>
+          </div>
         </form>
       )}
     </div>
