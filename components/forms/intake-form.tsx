@@ -85,7 +85,14 @@ export function IntakeForm({
     }
     const payload: Record<string, string | number> = {};
     data.forEach((value, key) => {
-      if (key === "path" || key === "website" || key === "company" || typeof value !== "string") {
+      if (
+        key === "path" ||
+        key === "website" ||
+        key === "company" ||
+        key.startsWith("cf-") ||
+        key === "g-recaptcha-response" ||
+        typeof value !== "string"
+      ) {
         return;
       }
       const trimmed = value.trim();
